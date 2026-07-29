@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sumplete: Sum Delete — Fuzzy Dino Labs</title>
+  <meta name="description" content="Sumplete: Sum Delete is a ChatGPT-inspired math logic puzzle game combining Sudoku and Nonogram mechanics. Mark grid numbers red or green to match target sums.">
+  <meta property="og:title" content="Sumplete: Sum Delete — Mobile Puzzle Game">
+  <meta property="og:description" content="ChatGPT inspired math logic puzzle. Delete grid numbers to solve row and column sums.">
+  <meta property="og:image" content="../images/Sumplete/section3-1.png">
+  
+  <link rel="icon" href="../images/FDL_logo_512_transparent.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .game-page-hero {
+      padding: 9rem 2rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .game-page-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 24px;
+      box-shadow: 0 0 30px rgba(0, 242, 254, 0.4);
+      object-fit: cover;
+    }
+    .game-details-box {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      max-width: 1000px;
+      margin: 2rem auto 4rem;
+      box-shadow: var(--shadow-card);
+    }
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+    .screenshot-img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-glass);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+    .screenshot-img:hover {
+      transform: scale(1.03);
+      border-color: var(--primary-glow);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../index.html" class="brand-logo">
+        <img src="../images/FDL_logo_512_transparent.png" alt="Fuzzy Dino Labs Logo" style="width: 44px; height: 44px; object-fit: contain;">
+        <span>Fuzzy Dino <span class="gradient-text">Labs</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../index.html#portfolio" class="nav-link">All Games</a></li>
+        <li><a href="../privacy-policy" class="nav-link">Privacy Policy</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- Game Hero -->
+  <header class="game-page-hero">
+    <img src="../images/Sumplete/section3-1.png" alt="Sumplete Icon" class="game-page-icon" onerror="this.src='../images/FDL_logo_512_transparent.png'">
+    <span class="badge badge-ai">Math & Logic Puzzle</span>
+    <h1 style="font-size: 3rem;">Sumplete: Sum Delete</h1>
+    <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 650px;">
+      A cross between Sudoku and Nonogram puzzle games. ChatGPT inspired the rules of the game!
+    </p>
+
+    <div class="store-badges" style="justify-content: center; margin-top: 1rem;">
+      <a href="#" class="store-btn">
+        <span>📱</span>
+        <div class="store-btn-text">
+          <span class="store-btn-sub">Download on</span>
+          <span class="store-btn-main">Google Play</span>
+        </div>
+      </a>
+      <a href="#" class="store-btn">
+        <span>🍏</span>
+        <div class="store-btn-text">
+          <span class="store-btn-sub">Download on</span>
+          <span class="store-btn-main">App Store</span>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <!-- Detailed Game Overview -->
+  <main class="game-details-box">
+    <h2 style="font-size: 2rem; margin-bottom: 1.5rem;" class="gradient-text">How To Play & Rules</h2>
+    
+    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;">
+      In <strong>Sumplete: Sum Delete</strong>, your objective is to mark numbers on the grid that need to be removed in order for the row and column sums to match the target numbers displayed on the sides.
+    </p>
+
+    <div class="game-mechanics" style="margin-bottom: 2.5rem; padding: 1.5rem;">
+      <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--text-main);">Game Controls & Indicators:</h3>
+      <div class="mechanic-tag" style="margin-bottom: 0.75rem;">
+        <span class="mechanic-bullet" style="font-size: 1.2rem;">🔴</span>
+        <div><strong>Red Mark:</strong> Marking a number red excludes it from the current row and column sum calculation.</div>
+      </div>
+      <div class="mechanic-tag" style="margin-bottom: 0.75rem;">
+        <span class="mechanic-bullet" style="font-size: 1.2rem;">🟢</span>
+        <div><strong>Green Mark:</strong> Marking a number green keeps it in the row and column sum calculation.</div>
+      </div>
+      <div class="mechanic-tag">
+        <span class="mechanic-bullet" style="font-size: 1.2rem;">✨</span>
+        <div><strong>Target Indicators:</strong> Once the numbers outside the grid turn green, you know you have achieved the correct sum for that row or column!</div>
+      </div>
+    </div>
+
+    <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">Gameplay Screenshots</h2>
+    <div class="screenshot-grid">
+      <img src="../images/Sumplete/section3-1.png" alt="Sumplete Board View" class="screenshot-img">
+      <img src="../images/Sumplete/section3-2.png" alt="Sumplete Grid Selection" class="screenshot-img">
+      <img src="../images/Sumplete/section3-3.png" alt="Sumplete Level Solved" class="screenshot-img">
+      <img src="../images/Sumplete/section3-4.png" alt="Sumplete Puzzle Mode" class="screenshot-img">
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fuzzy Dino Labs. All rights reserved.</p>
+      <p><a href="../index.html" class="footer-link">Back to Portfolio Homepage</a></p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

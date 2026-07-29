@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nonogram: Picture Logic — Fuzzy Dino Labs</title>
+  <meta name="description" content="Nonogram is a picture logic puzzle where cells in a grid are colored or left blank according to side number clues (discrete tomography) to reveal hidden pixel art.">
+  <meta property="og:title" content="Nonogram: Picture Logic — Pixel Art Puzzle">
+  <meta property="og:description" content="Use margin clues to color grid cells and reveal hidden pixel art pictures.">
+  <meta property="og:image" content="../images/Nonogram/section3-1.png">
+  
+  <link rel="icon" href="../images/FDL_logo_512_transparent.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .game-page-hero {
+      padding: 9rem 2rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .game-page-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 24px;
+      box-shadow: 0 0 30px rgba(46, 213, 115, 0.4);
+      object-fit: cover;
+    }
+    .game-details-box {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      max-width: 1000px;
+      margin: 2rem auto 4rem;
+      box-shadow: var(--shadow-card);
+    }
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+    .screenshot-img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-glass);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+    .screenshot-img:hover {
+      transform: scale(1.03);
+      border-color: #2ed573;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../index.html" class="brand-logo">
+        <img src="../images/FDL_logo_512_transparent.png" alt="Fuzzy Dino Labs Logo" style="width: 44px; height: 44px; object-fit: contain;">
+        <span>Fuzzy Dino <span class="gradient-text">Labs</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../index.html#portfolio" class="nav-link">All Games</a></li>
+        <li><a href="../privacy-policy" class="nav-link">Privacy Policy</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- Game Hero -->
+  <header class="game-page-hero">
+    <img src="../images/Nonogram/section3-1.png" alt="Nonogram Icon" class="game-page-icon" onerror="this.src='../images/FDL_logo_512_transparent.png'">
+    <span class="badge badge-logic">Pixel Art Picture Logic</span>
+    <h1 style="font-size: 3rem;">Nonogram: Picture Logic</h1>
+    <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 650px;">
+      Uncover beautiful pixel art masterpieces by solving number clue logic puzzles!
+    </p>
+
+    <div class="store-badges" style="justify-content: center; margin-top: 1rem;">
+      <a href="#" class="store-btn">
+        <span>📱</span>
+        <div class="store-btn-text">
+          <span class="store-btn-sub">Download on</span>
+          <span class="store-btn-main">Google Play</span>
+        </div>
+      </a>
+      <a href="#" class="store-btn">
+        <span>🍏</span>
+        <div class="store-btn-text">
+          <span class="store-btn-sub">Download on</span>
+          <span class="store-btn-main">App Store</span>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <!-- Detailed Game Overview -->
+  <main class="game-details-box">
+    <h2 style="font-size: 2rem; margin-bottom: 1.5rem;" class="gradient-text">How Nonograms Work</h2>
+    
+    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;">
+      <strong>Nonograms</strong> are picture logic puzzles in which cells in a grid must be colored or left blank according to numbers at the side of the grid to reveal a hidden pixel art image.
+    </p>
+
+    <div class="game-mechanics" style="margin-bottom: 2.5rem; padding: 1.5rem;">
+      <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--text-main);">Margin Clue Rules:</h3>
+      <div class="mechanic-tag" style="margin-bottom: 0.75rem;">
+        <span class="mechanic-bullet" style="font-size: 1.2rem;">🔢</span>
+        <div>The numbers are a form of discrete tomography measuring how many unbroken lines of filled-in squares exist in any given row or column.</div>
+      </div>
+      <div class="mechanic-tag" style="margin-bottom: 0.75rem;">
+        <span class="mechanic-bullet" style="font-size: 1.2rem;">💡</span>
+        <div><strong>Clue Example:</strong> A clue of <code>"4 8 3"</code> means there are sets of four, eight, and three filled squares in that order, separated by at least one blank square between successive sets!</div>
+      </div>
+      <div class="mechanic-tag">
+        <span class="mechanic-bullet" style="font-size: 1.2rem;">🖼️</span>
+        <div>Use logical deduction to complete every line and reveal the hidden pixel art artwork.</div>
+      </div>
+    </div>
+
+    <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">Gameplay Screenshots</h2>
+    <div class="screenshot-grid">
+      <img src="../images/Nonogram/section3-1.png" alt="Nonogram Grid View" class="screenshot-img">
+      <img src="../images/Nonogram/section3-2.png" alt="Nonogram Gameplay" class="screenshot-img">
+      <img src="../images/Nonogram/section3-3.png" alt="Nonogram Pixel Art Solved" class="screenshot-img">
+      <img src="../images/Nonogram/section3-4.png" alt="Nonogram Level Selection" class="screenshot-img">
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fuzzy Dino Labs. All rights reserved.</p>
+      <p><a href="../index.html" class="footer-link">Back to Portfolio Homepage</a></p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
