@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CipherSage — Acrostic Cryptogram Puzzle Game — Fuzzy Dino Labs</title>
+  <meta name="description" content="Unravel encrypted messages, decode famous quotes, and crack acrostic substitution ciphers in CipherSage. Over 120 levels & 365 daily cryptogram puzzles.">
+  <meta property="og:title" content="CipherSage — Acrostic Cryptogram Puzzle Game">
+  <meta property="og:description" content="Unravel encrypted messages and decode famous quotes from history’s greatest thinkers. 120+ levels, 365 daily puzzles & offline play.">
+  <meta property="og:image" content="../images/CipherSage/featured_small.png">
+  
+  <link rel="icon" href="../images/FDL_logo_512_transparent.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .game-page-hero {
+      padding: 9rem 2rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .game-page-icon {
+      width: 110px;
+      height: 110px;
+      border-radius: 24px;
+      box-shadow: 0 0 35px rgba(0, 242, 254, 0.4);
+      object-fit: cover;
+    }
+    .game-details-box {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      max-width: 1000px;
+      margin: 2rem auto 4rem;
+      box-shadow: var(--shadow-card);
+    }
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+    .screenshot-img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-glass);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+    .screenshot-img:hover {
+      transform: scale(1.03);
+      border-color: var(--primary-glow);
+    }
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .feature-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+    }
+    .feature-item h4 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+    .feature-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../index.html" class="brand-logo">
+        <img src="../images/FDL_logo_512_transparent.png" alt="Fuzzy Dino Labs Logo" style="width: 44px; height: 44px; object-fit: contain;">
+        <span>Fuzzy Dino <span class="gradient-text">Labs</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../index.html#portfolio" class="nav-link">All Games</a></li>
+        <li><a href="../privacy-policy" class="nav-link">Privacy Policy</a></li>
+        <li><a href="../terms-of-service" class="nav-link">Terms of Service</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- Game Hero -->
+  <header class="game-page-hero">
+    <img src="../images/CipherSage/play_store_512.png" alt="CipherSage Icon" class="game-page-icon" onerror="this.src='../images/FDL_logo_512_transparent.png'">
+    <span class="badge badge-ai">Cryptogram & Acrostic Logic</span>
+    <h1 style="font-size: 3rem;">CipherSage</h1>
+    <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 700px;">
+      Unravel encrypted messages, decode famous quotes, and challenge your mind with the ultimate substitution cipher puzzle game!
+    </p>
+
+    <div class="store-badges" style="justify-content: center; margin-top: 1rem;">
+      <a href="https://play.google.com/store/apps/dev?id=4883328535939433573" target="_blank" class="store-btn">
+        <span>📱</span>
+        <div class="store-btn-text">
+          <span class="store-btn-sub">Download on</span>
+          <span class="store-btn-main">Google Play</span>
+        </div>
+      </a>
+      <a href="https://apps.apple.com/us/developer/daniel-kovac/id1678032511" target="_blank" class="store-btn">
+        <span>🍏</span>
+        <div class="store-btn-text">
+          <span class="store-btn-sub">Download on</span>
+          <span class="store-btn-main">App Store</span>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <!-- Detailed Game Section -->
+  <main class="game-details-box">
+    <h2 style="font-size: 2rem; text-align: center; margin-bottom: 1rem;">About <span class="gradient-text">CipherSage</span></h2>
+    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; text-align: center; max-width: 800px; margin: 0 auto;">
+      CipherSage combines classic acrostic-style word clues with cryptogram quotes from history’s greatest thinkers. Solve word clues to reveal matching cipher numbers across the quote, then use logic to crack the code and unveil the full message!
+    </p>
+
+    <!-- Screenshot Gallery -->
+    <div class="screenshot-grid">
+      <img src="../images/CipherSage/slide_1_en-US.png" alt="CipherSage Screenshot 1" class="screenshot-img">
+      <img src="../images/CipherSage/slide_2_en-US.png" alt="CipherSage Screenshot 2" class="screenshot-img">
+      <img src="../images/CipherSage/slide_3_en-US.png" alt="CipherSage Screenshot 3" class="screenshot-img">
+      <img src="../images/CipherSage/slide_4_en-US.png" alt="CipherSage Screenshot 4" class="screenshot-img">
+      <img src="../images/CipherSage/slide_5_en-US.png" alt="CipherSage Screenshot 5" class="screenshot-img">
+    </div>
+
+    <!-- Feature Grid -->
+    <h3 style="font-size: 1.6rem; text-align: center; margin-top: 3rem;">🌟 Key Features</h3>
+    <div class="features-list">
+      <div class="feature-item">
+        <h4>🧩 120+ Handcrafted Levels</h4>
+        <p>Progress from simple tutorial ciphers to expert-level historical quotes. Test your vocabulary, logic, and deduction skills!</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>📅 365 Daily Cryptograms</h4>
+        <p>A brand new puzzle for every single day of the year. Build your daily streak and earn daily rewards!</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>🏆 28 Trophy Achievements</h4>
+        <p>Collect 28 unique achievements across Progress, Mastery, Daily, and Economy categories with Game Center leaderboards.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>💡 Helpful Hint Assists</h4>
+        <p>Reveal Random Letters, illuminate all Vowels (A, E, I, O, U), or spot and correct wrong entries instantly with Check Mistakes.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>🎁 Daily Rewards & Milestones</h4>
+        <p>7-Day Daily Login Calendar with escalating rewards plus Bonus Present Gifts (+100 Coins!) for every 7 levels completed.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>🎨 Premium Adaptive Design</h4>
+        <p>Beautiful Dark Mode and crisp High-Contrast Light Mode with custom polyphonic background music & sound effects engine.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>📴 100% Offline Playable</h4>
+        <p>No internet connection required — play anytime on your commute, travel, or break!</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="../index.html#portfolio" class="btn btn-glass">&larr; Back to Portfolio</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand-logo">
+          <img src="../images/FDL_logo_512_transparent.png" alt="Fuzzy Dino Labs Logo" style="width: 36px; height: 36px; object-fit: contain;">
+          <span>Fuzzy Dino <span class="gradient-text">Labs</span></span>
+        </a>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Crafting vibrant mobile puzzle and strategy games.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4 class="footer-title">Portfolio Games</h4>
+          <a href="../ciphersage" class="footer-link">CipherSage</a>
+          <a href="../sumplete" class="footer-link">Sumplete: Sum Delete</a>
+          <a href="../filler" class="footer-link">Filler: Flood It</a>
+          <a href="../hide-the-bones" class="footer-link">Hide The Bones</a>
+          <a href="../nonogram" class="footer-link">Nonogram</a>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Legal & Verification</h4>
+          <a href="../privacy-policy" class="footer-link">Privacy Policy</a>
+          <a href="../terms-of-service" class="footer-link">Terms of Service</a>
+          <a href="../app-ads.txt" class="footer-link" target="_blank">app-ads.txt</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fuzzy Dino Labs. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
