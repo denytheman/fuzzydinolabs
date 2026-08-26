@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sumplete: Sum Delete — Fuzzy Dino Labs</title>
   <meta name="description" content="Sumplete: Sum Delete is a ChatGPT-inspired math logic puzzle game combining Sudoku and Nonogram mechanics. Mark grid numbers red or green to match target sums.">
-  <meta property="og:title" content="Sumplete: Sum Delete — Mobile Puzzle Game">
+  <meta property="og:title" content="Sumplete: Sum Delete — Mobile Math Puzzle Game">
   <meta property="og:description" content="ChatGPT inspired math logic puzzle. Delete grid numbers to solve row and column sums.">
-  <meta property="og:image" content="../images/Sumplete/section3-1.png">
+  <meta property="og:image" content="../images/Sumplete/icon_512.png">
   
   <link rel="icon" href="../images/FDL_logo_512_transparent.png" type="image/png">
 
@@ -28,10 +28,10 @@
       gap: 1.25rem;
     }
     .game-page-icon {
-      width: 100px;
-      height: 100px;
+      width: 110px;
+      height: 110px;
       border-radius: 24px;
-      box-shadow: 0 0 30px rgba(0, 242, 254, 0.4);
+      box-shadow: 0 0 35px rgba(0, 242, 254, 0.45);
       object-fit: cover;
     }
     .game-details-box {
@@ -46,7 +46,7 @@
     }
     .screenshot-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1.5rem;
       margin: 2.5rem 0;
     }
@@ -55,11 +55,72 @@
       border-radius: var(--radius-md);
       border: 1px solid var(--border-glass);
       box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
     .screenshot-img:hover {
       transform: scale(1.03);
       border-color: var(--primary-glow);
+    }
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .feature-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .feature-item:hover {
+      border-color: var(--primary-accent);
+      transform: translateY(-2px);
+    }
+    .feature-item h4 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+    .feature-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .how-to-play-box {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin: 2.5rem 0;
+      text-align: left;
+    }
+    .how-to-play-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 0.85rem;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+    .how-to-play-step:last-child {
+      margin-bottom: 0;
+    }
+    .step-number {
+      background: linear-gradient(135deg, var(--primary-accent), var(--secondary-glow));
+      color: white;
+      font-weight: 700;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
     }
   </style>
 </head>
@@ -76,6 +137,7 @@
         <li><a href="../index.html" class="nav-link">Home</a></li>
         <li><a href="../index.html#portfolio" class="nav-link">All Games</a></li>
         <li><a href="../privacy-policy" class="nav-link">Privacy Policy</a></li>
+        <li><a href="../terms-of-service" class="nav-link">Terms of Service</a></li>
       </ul>
       <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">☰</button>
     </div>
@@ -83,11 +145,11 @@
 
   <!-- Game Hero -->
   <header class="game-page-hero">
-    <img src="../images/Sumplete/section3-1.png" alt="Sumplete Icon" class="game-page-icon" onerror="this.src='../images/FDL_logo_512_transparent.png'">
-    <span class="badge badge-ai">Math & Logic Puzzle</span>
+    <img src="../images/Sumplete/icon_512.png" alt="Sumplete Icon" class="game-page-icon" onerror="this.src='../images/FDL_logo_512_transparent.png'">
+    <span class="badge badge-ai">ChatGPT Inspired Math Logic</span>
     <h1 style="font-size: 3rem;">Sumplete: Sum Delete</h1>
-    <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 650px;">
-      A cross between Sudoku and Nonogram puzzle games. ChatGPT inspired the rules of the game!
+    <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 680px;">
+      A clever cross between Sudoku and Nonogram puzzle games. Delete numbers across the grid to solve row and column sums!
     </p>
 
     <div class="store-badges" style="justify-content: center; margin-top: 1rem;">
@@ -108,43 +170,123 @@
     </div>
   </header>
 
-  <!-- Detailed Game Overview -->
+  <!-- Detailed Game Section -->
   <main class="game-details-box">
-    <h2 style="font-size: 2rem; margin-bottom: 1.5rem;" class="gradient-text">How To Play & Rules</h2>
-    
-    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;">
-      In <strong>Sumplete: Sum Delete</strong>, your objective is to mark numbers on the grid that need to be removed in order for the row and column sums to match the target numbers displayed on the sides.
+    <h2 style="font-size: 2rem; text-align: center; margin-bottom: 1rem;">About <span class="gradient-text">Sumplete</span></h2>
+    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; text-align: center; max-width: 820px; margin: 0 auto;">
+      In <strong>Sumplete: Sum Delete</strong>, your objective is to mark numbers on the grid that need to be eliminated so that the remaining numbers add up to the target sum outside each row and column. With varying grid sizes from 3x3 to 9x9, it's an addictive workout for your brain!
     </p>
 
-    <div class="game-mechanics" style="margin-bottom: 2.5rem; padding: 1.5rem;">
-      <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--text-main);">Game Controls & Indicators:</h3>
-      <div class="mechanic-tag" style="margin-bottom: 0.75rem;">
-        <span class="mechanic-bullet" style="font-size: 1.2rem;">🔴</span>
-        <div><strong>Red Mark:</strong> Marking a number red excludes it from the current row and column sum calculation.</div>
+    <!-- Screenshot Gallery -->
+    <div class="screenshot-grid">
+      <img src="../images/Sumplete/slide_1_en-US.png" alt="Sumplete: Sum Delete Screenshot 1" class="screenshot-img">
+      <img src="../images/Sumplete/slide_2_en-US.png" alt="Sumplete: Sum Delete Screenshot 2" class="screenshot-img">
+      <img src="../images/Sumplete/slide_3_en-US.png" alt="Sumplete: Sum Delete Screenshot 3" class="screenshot-img">
+      <img src="../images/Sumplete/slide_4_en-US.png" alt="Sumplete: Sum Delete Screenshot 4" class="screenshot-img">
+      <img src="../images/Sumplete/slide_5_en-US.png" alt="Sumplete: Sum Delete Screenshot 5" class="screenshot-img">
+    </div>
+
+    <!-- How to Play -->
+    <div class="how-to-play-box">
+      <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-main);">🔢 How to Play:</h3>
+      <div class="how-to-play-step">
+        <span class="step-number">1</span>
+        <div><strong>Examine Target Sums:</strong> Look at the target numbers positioned at the right and bottom of each row and column.</div>
       </div>
-      <div class="mechanic-tag" style="margin-bottom: 0.75rem;">
-        <span class="mechanic-bullet" style="font-size: 1.2rem;">🟢</span>
-        <div><strong>Green Mark:</strong> Marking a number green keeps it in the row and column sum calculation.</div>
+      <div class="how-to-play-step">
+        <span class="step-number">2</span>
+        <div><strong>Mark to Delete (Red):</strong> Tap a number to mark it red, removing its value from that row and column sum.</div>
       </div>
-      <div class="mechanic-tag">
-        <span class="mechanic-bullet" style="font-size: 1.2rem;">✨</span>
-        <div><strong>Target Indicators:</strong> Once the numbers outside the grid turn green, you know you have achieved the correct sum for that row or column!</div>
+      <div class="how-to-play-step">
+        <span class="step-number">3</span>
+        <div><strong>Confirm Correct (Green):</strong> Keep essential numbers green to satisfy the row and column equations.</div>
+      </div>
+      <div class="how-to-play-step">
+        <span class="step-number">4</span>
+        <div><strong>Target Indicator Feedback:</strong> Outer indicators illuminate green as soon as the target sum for that line is perfectly satisfied!</div>
       </div>
     </div>
 
-    <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">Gameplay Screenshots</h2>
-    <div class="screenshot-grid">
-      <img src="../images/Sumplete/section3-1.png" alt="Sumplete Board View" class="screenshot-img">
-      <img src="../images/Sumplete/section3-2.png" alt="Sumplete Grid Selection" class="screenshot-img">
-      <img src="../images/Sumplete/section3-3.png" alt="Sumplete Level Solved" class="screenshot-img">
-      <img src="../images/Sumplete/section3-4.png" alt="Sumplete Puzzle Mode" class="screenshot-img">
+    <!-- Feature Grid -->
+    <h3 style="font-size: 1.6rem; text-align: center; margin-top: 3rem;">🌟 Key Features</h3>
+    <div class="features-list">
+      <div class="feature-item">
+        <h4>🤖 AI-Inspired Game Design</h4>
+        <p>Original rules conceptualized with ChatGPT, blending arithmetic deduction with grid-based elimination mechanics.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>📐 Multiple Grid Sizes</h4>
+        <p>Choose from beginner-friendly 3x3 grids up to diabolical 9x9 master puzzles with customizable difficulty levels.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>💡 Smart Hint & Validation System</h4>
+        <p>Instant visual feedback with target completion indicators, mistake checks, and helpful step assists when stuck.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>🎨 Clean Dark & High-Contrast Modes</h4>
+        <p>Minimalist, eye-friendly aesthetics built for long, comfortable puzzle-solving sessions.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>🏆 Achievements & Stats Tracking</h4>
+        <p>Keep track of your best solve times, completed grid counts, and daily puzzle consistency.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>📴 100% Offline Playable</h4>
+        <p>No Wi-Fi required — enjoy unlimited procedural sum puzzles anywhere, anytime.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="../index.html#portfolio" class="btn btn-glass">&larr; Back to Portfolio</a>
     </div>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand-logo">
+          <img src="../images/FDL_logo_512_transparent.png" alt="Fuzzy Dino Labs Logo" style="width: 36px; height: 36px; object-fit: contain;">
+          <span>Fuzzy Dino <span class="gradient-text">Labs</span></span>
+        </a>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Crafting vibrant mobile puzzle and strategy games.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4 class="footer-title">Portfolio Games</h4>
+          <a href="../ciphersage" class="footer-link">CipherSage</a>
+          <a href="../sumplete" class="footer-link">Sumplete: Sum Delete</a>
+          <a href="../filler" class="footer-link">Filler: Flood It</a>
+          <a href="../starlight" class="footer-link">Starlight: Star Logic Puzzle</a>
+          <a href="../nonogram" class="footer-link">Nonogram</a>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Connect & Social</h4>
+          <a href="https://x.com/fuzzydinolabs" class="footer-link" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+          <a href="https://www.youtube.com/@FuzzyDinoLabs" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
+          <a href="https://www.facebook.com/profile.php?id=61550564728273" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook Page</a>
+          <a href="https://play.google.com/store/apps/dev?id=4883328535939433573" class="footer-link" target="_blank" rel="noopener noreferrer">Google Play</a>
+          <a href="https://apps.apple.com/us/developer/daniel-kovac/id1678032511" class="footer-link" target="_blank" rel="noopener noreferrer">App Store</a>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Legal & Verification</h4>
+          <a href="../privacy-policy" class="footer-link">Privacy Policy</a>
+          <a href="../terms-of-service" class="footer-link">Terms of Service</a>
+          <a href="../app-ads.txt" class="footer-link" target="_blank">app-ads.txt</a>
+        </div>
+      </div>
+    </div>
+
     <div class="footer-bottom">
       <p>&copy; 2026 Fuzzy Dino Labs. All rights reserved.</p>
-      <p><a href="../index.html" class="footer-link">Back to Portfolio Homepage</a></p>
     </div>
   </footer>
 

@@ -28,10 +28,10 @@
       gap: 1.25rem;
     }
     .game-page-icon {
-      width: 100px;
-      height: 100px;
+      width: 110px;
+      height: 110px;
       border-radius: 24px;
-      box-shadow: 0 0 30px rgba(46, 213, 115, 0.4);
+      box-shadow: 0 0 35px rgba(46, 213, 115, 0.45);
       object-fit: cover;
     }
     .game-details-box {
@@ -46,7 +46,7 @@
     }
     .screenshot-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1.5rem;
       margin: 2.5rem 0;
     }
@@ -55,11 +55,72 @@
       border-radius: var(--radius-md);
       border: 1px solid var(--border-glass);
       box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
     .screenshot-img:hover {
       transform: scale(1.03);
       border-color: #2ed573;
+    }
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .feature-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .feature-item:hover {
+      border-color: #2ed573;
+      transform: translateY(-2px);
+    }
+    .feature-item h4 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+    .feature-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .how-to-play-box {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin: 2.5rem 0;
+      text-align: left;
+    }
+    .how-to-play-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 0.85rem;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+    .how-to-play-step:last-child {
+      margin-bottom: 0;
+    }
+    .step-number {
+      background: linear-gradient(135deg, #2ed573, #1e90ff);
+      color: white;
+      font-weight: 700;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
     }
   </style>
 </head>
@@ -76,6 +137,7 @@
         <li><a href="../index.html" class="nav-link">Home</a></li>
         <li><a href="../index.html#portfolio" class="nav-link">All Games</a></li>
         <li><a href="../privacy-policy" class="nav-link">Privacy Policy</a></li>
+        <li><a href="../terms-of-service" class="nav-link">Terms of Service</a></li>
       </ul>
       <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">☰</button>
     </div>
@@ -86,8 +148,8 @@
     <img src="../images/Nonogram/section3-1.png" alt="Nonogram Icon" class="game-page-icon" onerror="this.src='../images/FDL_logo_512_transparent.png'">
     <span class="badge badge-logic">Pixel Art Picture Logic</span>
     <h1 style="font-size: 3rem;">Nonogram: Picture Logic</h1>
-    <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 650px;">
-      Uncover beautiful pixel art masterpieces by solving number clue logic puzzles!
+    <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 680px;">
+      Uncover beautiful pixel art illustrations by solving number clue logic puzzles!
     </p>
 
     <div class="store-badges" style="justify-content: center; margin-top: 1rem;">
@@ -108,43 +170,122 @@
     </div>
   </header>
 
-  <!-- Detailed Game Overview -->
+  <!-- Detailed Game Section -->
   <main class="game-details-box">
-    <h2 style="font-size: 2rem; margin-bottom: 1.5rem;" class="gradient-text">How Nonograms Work</h2>
-    
-    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;">
-      <strong>Nonograms</strong> are picture logic puzzles in which cells in a grid must be colored or left blank according to numbers at the side of the grid to reveal a hidden pixel art image.
+    <h2 style="font-size: 2rem; text-align: center; margin-bottom: 1rem;">About <span class="gradient-text">Nonogram</span></h2>
+    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; text-align: center; max-width: 820px; margin: 0 auto;">
+      <strong>Nonograms</strong> (also known as Hanjie, Picross, or Griddlers) are picture logic puzzles where cells in a grid must be colored or left blank according to side number clues to reveal a hidden pixel art image.
     </p>
 
-    <div class="game-mechanics" style="margin-bottom: 2.5rem; padding: 1.5rem;">
-      <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--text-main);">Margin Clue Rules:</h3>
-      <div class="mechanic-tag" style="margin-bottom: 0.75rem;">
-        <span class="mechanic-bullet" style="font-size: 1.2rem;">🔢</span>
-        <div>The numbers are a form of discrete tomography measuring how many unbroken lines of filled-in squares exist in any given row or column.</div>
-      </div>
-      <div class="mechanic-tag" style="margin-bottom: 0.75rem;">
-        <span class="mechanic-bullet" style="font-size: 1.2rem;">💡</span>
-        <div><strong>Clue Example:</strong> A clue of <code>"4 8 3"</code> means there are sets of four, eight, and three filled squares in that order, separated by at least one blank square between successive sets!</div>
-      </div>
-      <div class="mechanic-tag">
-        <span class="mechanic-bullet" style="font-size: 1.2rem;">🖼️</span>
-        <div>Use logical deduction to complete every line and reveal the hidden pixel art artwork.</div>
-      </div>
-    </div>
-
-    <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">Gameplay Screenshots</h2>
+    <!-- Screenshot Gallery -->
     <div class="screenshot-grid">
       <img src="../images/Nonogram/section3-1.png" alt="Nonogram Grid View" class="screenshot-img">
       <img src="../images/Nonogram/section3-2.png" alt="Nonogram Gameplay" class="screenshot-img">
       <img src="../images/Nonogram/section3-3.png" alt="Nonogram Pixel Art Solved" class="screenshot-img">
       <img src="../images/Nonogram/section3-4.png" alt="Nonogram Level Selection" class="screenshot-img">
     </div>
+
+    <!-- How to Play -->
+    <div class="how-to-play-box">
+      <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-main);">🧩 Margin Clue Rules:</h3>
+      <div class="how-to-play-step">
+        <span class="step-number">1</span>
+        <div><strong>Read Row & Column Clues:</strong> The numbers measure how many unbroken lines of filled-in squares exist in any given line.</div>
+      </div>
+      <div class="how-to-play-step">
+        <span class="step-number">2</span>
+        <div><strong>Understand Sequences:</strong> A clue of <code>"4 8 3"</code> means there are runs of 4, 8, and 3 filled squares in order, separated by at least one blank space.</div>
+      </div>
+      <div class="how-to-play-step">
+        <span class="step-number">3</span>
+        <div><strong>Mark Confirmed & Cross Blanks:</strong> Fill confirmed squares and place cross marks on definite empty cells to narrow down the solution.</div>
+      </div>
+      <div class="how-to-play-step">
+        <span class="step-number">4</span>
+        <div><strong>Reveal Pixel Art:</strong> Complete every row and column to bring the hidden pixel artwork to life!</div>
+      </div>
+    </div>
+
+    <!-- Feature Grid -->
+    <h3 style="font-size: 1.6rem; text-align: center; margin-top: 3rem;">🌟 Key Features</h3>
+    <div class="features-list">
+      <div class="feature-item">
+        <h4>🎨 Hundreds of Pixel Art Puzzles</h4>
+        <p>A huge library of handcrafted picture puzzles across various categories, themes, and difficulties.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>📐 Multiple Grid Dimensions</h4>
+        <p>From quick 5x5 grids for casual play to intricate 15x15 and 20x20 picture challenges.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>💡 Intuitive Touch Controls & Tools</h4>
+        <p>Smooth zoom, pan, cross-marker mode, and mistake assists tailored for precision mobile play.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>🎨 Clean Visual Themes</h4>
+        <p>Dark mode and high-contrast color palettes designed to minimize eye fatigue during extended puzzle sessions.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>🏆 Progression & Gallery Unlocks</h4>
+        <p>Collect completed artworks in your personal gallery and track your solving streaks.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>📴 100% Offline Playable</h4>
+        <p>No internet required — enjoy crisp logic deduction puzzles wherever you go.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="../index.html#portfolio" class="btn btn-glass">&larr; Back to Portfolio</a>
+    </div>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand-logo">
+          <img src="../images/FDL_logo_512_transparent.png" alt="Fuzzy Dino Labs Logo" style="width: 36px; height: 36px; object-fit: contain;">
+          <span>Fuzzy Dino <span class="gradient-text">Labs</span></span>
+        </a>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Crafting vibrant mobile puzzle and strategy games.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4 class="footer-title">Portfolio Games</h4>
+          <a href="../ciphersage" class="footer-link">CipherSage</a>
+          <a href="../sumplete" class="footer-link">Sumplete: Sum Delete</a>
+          <a href="../filler" class="footer-link">Filler: Flood It</a>
+          <a href="../starlight" class="footer-link">Starlight: Star Logic Puzzle</a>
+          <a href="../nonogram" class="footer-link">Nonogram</a>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Connect & Social</h4>
+          <a href="https://x.com/fuzzydinolabs" class="footer-link" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+          <a href="https://www.youtube.com/@FuzzyDinoLabs" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
+          <a href="https://www.facebook.com/profile.php?id=61550564728273" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook Page</a>
+          <a href="https://play.google.com/store/apps/dev?id=4883328535939433573" class="footer-link" target="_blank" rel="noopener noreferrer">Google Play</a>
+          <a href="https://apps.apple.com/us/developer/daniel-kovac/id1678032511" class="footer-link" target="_blank" rel="noopener noreferrer">App Store</a>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Legal & Verification</h4>
+          <a href="../privacy-policy" class="footer-link">Privacy Policy</a>
+          <a href="../terms-of-service" class="footer-link">Terms of Service</a>
+          <a href="../app-ads.txt" class="footer-link" target="_blank">app-ads.txt</a>
+        </div>
+      </div>
+    </div>
+
     <div class="footer-bottom">
       <p>&copy; 2026 Fuzzy Dino Labs. All rights reserved.</p>
-      <p><a href="../index.html" class="footer-link">Back to Portfolio Homepage</a></p>
     </div>
   </footer>
 
