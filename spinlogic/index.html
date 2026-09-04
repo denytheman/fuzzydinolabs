@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpinLogic: Marble Puzzle — In Development — Fuzzy Dino Labs</title>
+  <meta name="description" content="SpinLogic: Marble Puzzle is a fast-paced, tactile action puzzle game with rotary dials, transfer conduits, and dynamic live shaders. Coming soon to Android and iOS.">
+  <meta property="og:title" content="SpinLogic: Marble Puzzle — Action Rotary Puzzle Game">
+  <meta property="og:description" content="Spin dials, route falling marbles & match colors across 100 levels with dynamic shaders and 0 ads.">
+  <meta property="og:image" content="../images/SpinLogic/icon_512.png">
+  
+  <link rel="icon" href="../images/FDL_logo_512_transparent.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .game-page-hero {
+      padding: 9rem 2rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .game-page-icon {
+      width: 110px;
+      height: 110px;
+      border-radius: 24px;
+      box-shadow: 0 0 35px rgba(255, 107, 129, 0.45);
+      object-fit: cover;
+    }
+    .feature-banner-box {
+      max-width: 1000px;
+      margin: 0 auto 3rem;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-glass);
+      box-shadow: var(--shadow-card), 0 0 40px rgba(255, 107, 129, 0.2);
+    }
+    .feature-banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .game-details-box {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      max-width: 1000px;
+      margin: 2rem auto 4rem;
+      box-shadow: var(--shadow-card);
+    }
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+    .screenshot-img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-glass);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .screenshot-img:hover {
+      transform: scale(1.03);
+      border-color: #ff6b81;
+    }
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .feature-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .feature-item:hover {
+      border-color: #ff6b81;
+      transform: translateY(-2px);
+    }
+    .feature-item h4 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .feature-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .mechanics-showcase {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin: 2.5rem 0;
+      text-align: left;
+    }
+    .status-ribbon {
+      background: linear-gradient(90deg, rgba(255, 71, 87, 0.2), rgba(255, 107, 129, 0.2));
+      border: 1px solid rgba(255, 71, 87, 0.4);
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #ff6b81;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+    .zones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+      text-align: left;
+    }
+    .zone-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+    .zone-card h5 {
+      font-size: 1rem;
+      color: var(--primary-glow);
+      margin-bottom: 0.35rem;
+    }
+    .zone-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../" class="brand-logo">
+        <img src="../images/FDL_logo_512_transparent.png" alt="Fuzzy Dino Labs Logo" style="width: 44px; height: 44px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.4));">
+        <span>Fuzzy Dino <span class="gradient-text">Labs</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../#portfolio" class="nav-link">Our Games</a></li>
+        <li><a href="../#upcoming" class="nav-link" style="color: #ff6b81;">In Development</a></li>
+        <li><a href="../#features" class="nav-link">Studio Features</a></li>
+        <li><a href="../privacy-policy" class="nav-link">Privacy Policy</a></li>
+        <li><a href="../terms-of-service" class="nav-link">Terms of Service</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- Game Hero -->
+  <header class="game-page-hero">
+    <img src="../images/SpinLogic/icon_512.png" alt="SpinLogic Icon" class="game-page-icon" onerror="this.src='../images/FDL_logo_512_transparent.png'">
+    
+    <div class="status-ribbon">
+      <span class="pulse-dot"></span> In Active Development — Coming Soon
+    </div>
+
+    <h1 style="font-size: 3rem;">SpinLogic: <span class="gradient-text" style="background: linear-gradient(135deg, #ff6b81 0%, #ffa502 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Marble Puzzle</span></h1>
+    
+    <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 760px;">
+      Spin rotating dials, route falling marbles & match colors across 100 levels powered by dynamic 60/120 FPS live shaders!
+    </p>
+
+    <div style="margin-top: 0.5rem; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+      <span class="badge badge-action">Action Puzzle</span>
+      <span class="badge badge-ai">100 Handcrafted Levels</span>
+      <span class="badge badge-logic">100% Offline & No Ads</span>
+    </div>
+  </header>
+
+  <!-- Feature Graphic Banner -->
+  <div class="feature-banner-box">
+    <img src="../images/SpinLogic/feature_graphic.png" alt="SpinLogic Feature Graphic" class="feature-banner-img">
+  </div>
+
+  <!-- Detailed Game Section -->
+  <main class="game-details-box">
+    <h2 style="font-size: 2rem; text-align: center; margin-bottom: 1rem;">About <span class="gradient-text" style="background: linear-gradient(135deg, #ff6b81 0%, #ffa502 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">SpinLogic</span></h2>
+    
+    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; text-align: center; max-width: 840px; margin: 0 auto;">
+      <strong>SpinLogic</strong> is a fast-paced, tactile action puzzle game that reinvents the rotary puzzle genre for modern touchscreens. Guide falling chromatic marbles across dynamic networks of rotating dials, transfer conduits, and color filters!
+    </p>
+
+    <!-- Screenshot Gallery -->
+    <div class="screenshot-grid">
+      <img src="../images/SpinLogic/Screenshot_20260903_232023.png" alt="SpinLogic Screenshot 1" class="screenshot-img">
+      <img src="../images/SpinLogic/Screenshot_20260903_232106.png" alt="SpinLogic Screenshot 2" class="screenshot-img">
+      <img src="../images/SpinLogic/Screenshot_20260903_232139.png" alt="SpinLogic Screenshot 3" class="screenshot-img">
+      <img src="../images/SpinLogic/Screenshot_20260903_232159.png" alt="SpinLogic Screenshot 4" class="screenshot-img">
+    </div>
+
+    <!-- Core Mechanics -->
+    <div class="mechanics-showcase">
+      <h3 style="font-size: 1.4rem; margin-bottom: 1.25rem; color: var(--text-main);">⚙️ Innovative Rotary Puzzle Action</h3>
+      <div style="display: flex; flex-direction: column; gap: 1rem; color: var(--text-muted); font-size: 0.98rem; line-height: 1.6;">
+        <div><strong style="color: var(--text-main);">🔄 Tap to Spin:</strong> Turn 4-slot mechanical dials 90° counter-clockwise to organize falling marble colors.</div>
+        <div><strong style="color: var(--text-main);">🚀 Conduit Ejection:</strong> Tap marbles facing pipe channels to launch them across the network into adjacent dials.</div>
+        <div><strong style="color: var(--text-main);">💥 4-of-a-Kind Detonation:</strong> Fill all 4 slots of any dial with matching colors to trigger explosive clears, free up space, and build massive combo multipliers!</div>
+      </div>
+    </div>
+
+    <!-- 5 Zones -->
+    <div style="margin: 3rem 0;">
+      <h3 style="font-size: 1.5rem; text-align: center; margin-bottom: 0.5rem; color: var(--text-main);">🌌 5 Visually Stunning Shader Zones</h3>
+      <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; max-width: 700px; margin: 0 auto 1.5rem;">
+        Travel through 5 unique atmospheric realms powered by live 60/120 FPS dynamic background shaders:
+      </p>
+
+      <div class="zones-grid">
+        <div class="zone-card">
+          <h5>1. The Foundry</h5>
+          <p>2-color introductory training amidst molten steel and ambient heat.</p>
+        </div>
+        <div class="zone-card">
+          <h5>2. Cyberpunk District</h5>
+          <p>3 colors and Prismatic Wildcard marbles under neon rain reflections.</p>
+        </div>
+        <div class="zone-card">
+          <h5>3. Clockwork Brass</h5>
+          <p>4 colors, Caged Dials, and Obsidian Bomb explosions amongst spinning gears.</p>
+        </div>
+        <div class="zone-card">
+          <h5>4. Cryo Sub-Zero</h5>
+          <p>5 colors and Cryo Crystal frost-locking dials in sub-zero snowstorms.</p>
+        </div>
+        <div class="zone-card">
+          <h5>5. Quantum Void</h5>
+          <p>All 6 colors and Liquid Painter converters at the cosmic singularity.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features List -->
+    <div class="features-list">
+      <div class="feature-item">
+        <h4>🎮 3 Gameplay Modes</h4>
+        <p><strong>Campaign:</strong> 100 levels with star ratings & goals.<br>
+           <strong>Time Attack:</strong> +10s on color match high-score rush.<br>
+           <strong>Relax Mode:</strong> Zen, timer-free pure spatial logic.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>✨ Special Power Marbles</h4>
+        <p>🌈 <strong>Prismatic Wildcards:</strong> Adapts to any hue.<br>
+           💣 <strong>Obsidian Bombs:</strong> Vaporizes full dials.<br>
+           ❄️ <strong>Cryo Crystals:</strong> Shatter frost with rapid taps.<br>
+           🎨 <strong>Liquid Painters:</strong> Repaints adjacent marbles.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>📳 Tactile Haptics & Audio</h4>
+        <p>Satisfying physical feedback on every dial rotation, pipe ejection, and match burst with multi-tier haptics and an adaptive synthwave soundtrack.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>🏆 Pilot Dossier & Stats</h4>
+        <p>Unlock 10 achievement trophies and monitor your lifetime gameplay stats: win/loss ratios, total matches, max combo multipliers, and special maneuvers.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>📴 100% Offline & Private</h4>
+        <p>No Wi-Fi or data connection required. Play anywhere, anytime with zero account creation and instant pause-and-resume support.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>🚫 Zero Ads & Zero IAP</h4>
+        <p>Pure premium puzzle experience built with player focus: no microtransactions, no paywalls, and no pop-up interruptions.</p>
+      </div>
+    </div>
+
+    <!-- Pre-launch Callout -->
+    <div style="text-align: center; margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-glass);">
+      <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Launching Soon on Google Play & App Store</h3>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem; font-size: 0.95rem;">
+        Package: <code>com.fuzzydinolabs.spinlogic</code> &bull; Rated Everyone &bull; Built with Flutter & Shaders
+      </p>
+      <a href="../" class="btn btn-primary">&larr; Back to Studio Portfolio</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="../" class="brand-logo">
+          <img src="../images/FDL_logo_512_transparent.png" alt="Fuzzy Dino Labs Logo" style="width: 36px; height: 36px; object-fit: contain;">
+          <span>Fuzzy Dino <span class="gradient-text">Labs</span></span>
+        </a>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Crafting vibrant mobile puzzle and strategy games.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4 class="footer-title">Portfolio Games</h4>
+          <a href="../ciphersage" class="footer-link">CipherSage</a>
+          <a href="../sumplete" class="footer-link">Sumplete: Sum Delete</a>
+          <a href="../filler" class="footer-link">Filler: Flood It</a>
+          <a href="../starlight" class="footer-link">Starlight: Star Logic Puzzle</a>
+          <a href="../nonogram" class="footer-link">Nonogram</a>
+          <a href="../spinlogic" class="footer-link" style="color: #ff6b81;">SpinLogic (In Dev)</a>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Connect & Social</h4>
+          <a href="https://x.com/fuzzydinolabs" class="footer-link" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+          <a href="https://www.youtube.com/@FuzzyDinoLabs" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
+          <a href="https://www.facebook.com/profile.php?id=61550564728273" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook Page</a>
+          <a href="https://play.google.com/store/apps/dev?id=4883328535939433573" class="footer-link" target="_blank" rel="noopener noreferrer">Google Play</a>
+          <a href="https://apps.apple.com/us/developer/daniel-kovac/id1678032511" class="footer-link" target="_blank" rel="noopener noreferrer">App Store</a>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Legal & Verification</h4>
+          <a href="../privacy-policy" class="footer-link">Privacy Policy</a>
+          <a href="../kids-privacy" class="footer-link">Children's Privacy Policy</a>
+          <a href="../terms-of-service" class="footer-link">Terms of Service</a>
+          <a href="../app-ads.txt" class="footer-link" target="_blank">app-ads.txt</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fuzzy Dino Labs. All rights reserved.</p>
+      <p>Domain: <a href="https://www.fuzzydinolabs.com/" class="footer-link" style="color: var(--primary-glow);">www.fuzzydinolabs.com</a></p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

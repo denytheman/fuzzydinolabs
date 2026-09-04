@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dino Isles: Cozy Logic Puzzle — In Development — Fuzzy Dino Labs</title>
+  <meta name="description" content="Terraforming meets cozy logic! Drag to paint island habitats, balance dino numbers, hatch 14 dinosaur species, and decorate your living sanctuary in Dino Isles: Cozy Logic Puzzle.">
+  <meta property="og:title" content="Dino Isles: Cozy Logic Puzzle — Cozy Spatial Logic Game">
+  <meta property="og:description" content="Carve islands & hatch prehistoric dinos across 160 handcrafted levels, daily challenges, and zen sandbox modes.">
+  <meta property="og:image" content="../images/DinoIsles/icon_512.png">
+  
+  <link rel="icon" href="../images/FDL_logo_512_transparent.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .game-page-hero {
+      padding: 9rem 2rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .game-page-icon {
+      width: 110px;
+      height: 110px;
+      border-radius: 24px;
+      box-shadow: 0 0 35px rgba(46, 213, 115, 0.45);
+      object-fit: cover;
+    }
+    .feature-banner-box {
+      max-width: 1000px;
+      margin: 0 auto 3rem;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-glass);
+      box-shadow: var(--shadow-card), 0 0 40px rgba(46, 213, 115, 0.2);
+    }
+    .feature-banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .game-details-box {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      max-width: 1000px;
+      margin: 2rem auto 4rem;
+      box-shadow: var(--shadow-card);
+    }
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+    .screenshot-img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-glass);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .screenshot-img:hover {
+      transform: scale(1.03);
+      border-color: #2ed573;
+    }
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .feature-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .feature-item:hover {
+      border-color: #2ed573;
+      transform: translateY(-2px);
+    }
+    .feature-item h4 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .feature-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .laws-box {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      border: 1px solid rgba(46, 213, 115, 0.2);
+      margin: 2.5rem 0;
+      text-align: left;
+    }
+    .status-ribbon-cozy {
+      background: linear-gradient(90deg, rgba(46, 213, 115, 0.2), rgba(0, 242, 254, 0.2));
+      border: 1px solid rgba(46, 213, 115, 0.4);
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #2ed573;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+    .dino-species-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 1.25rem;
+    }
+    .dino-tag {
+      background: rgba(46, 213, 115, 0.08);
+      border: 1px solid rgba(46, 213, 115, 0.2);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      text-align: center;
+      color: var(--text-main);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../" class="brand-logo">
+        <img src="../images/FDL_logo_512_transparent.png" alt="Fuzzy Dino Labs Logo" style="width: 44px; height: 44px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.4));">
+        <span>Fuzzy Dino <span class="gradient-text">Labs</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../#portfolio" class="nav-link">Our Games</a></li>
+        <li><a href="../#upcoming" class="nav-link" style="color: #2ed573;">In Development</a></li>
+        <li><a href="../#features" class="nav-link">Studio Features</a></li>
+        <li><a href="../privacy-policy" class="nav-link">Privacy Policy</a></li>
+        <li><a href="../terms-of-service" class="nav-link">Terms of Service</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- Game Hero -->
+  <header class="game-page-hero">
+    <img src="../images/DinoIsles/icon_512.png" alt="Dino Isles Icon" class="game-page-icon" onerror="this.src='../images/FDL_logo_512_transparent.png'">
+    
+    <div class="status-ribbon-cozy">
+      <span class="pulse-dot" style="background-color: #2ed573; box-shadow: 0 0 10px #2ed573;"></span> In Active Development — Coming Soon
+    </div>
+
+    <h1 style="font-size: 3rem;">Dino Isles: <span class="gradient-text" style="background: linear-gradient(135deg, #2ed573 0%, #00f2fe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Cozy Logic Puzzle</span></h1>
+    
+    <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 760px;">
+      Terraforming meets cozy logic! Drag to paint island habitats, balance dino numbers, hatch 14 prehistoric eggs, and decorate your living sanctuary.
+    </p>
+
+    <div style="margin-top: 0.5rem; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+      <span class="badge badge-cozy">Cozy Spatial Logic</span>
+      <span class="badge badge-ai">160 Handcrafted Levels</span>
+      <span class="badge badge-logic">100% Offline & No Ads</span>
+    </div>
+  </header>
+
+  <!-- Feature Graphic Banner -->
+  <div class="feature-banner-box">
+    <img src="../images/DinoIsles/feature_graphic.jpg" alt="Dino Isles Feature Graphic" class="feature-banner-img">
+  </div>
+
+  <!-- Detailed Game Section -->
+  <main class="game-details-box">
+    <h2 style="font-size: 2rem; text-align: center; margin-bottom: 1rem;">About <span class="gradient-text" style="background: linear-gradient(135deg, #2ed573 0%, #00f2fe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Dino Isles</span></h2>
+    
+    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; text-align: center; max-width: 840px; margin: 0 auto;">
+      Welcome to <strong>Dino Isles: Cozy Logic Puzzle</strong>, a soothing and tactile spatial logic puzzle game where you terraform ancient archipelagos for adorable prehistoric companions! Progress through 10 unique biomes from gentle 4x4 Coral Shallows to master 10x10 Pangaea Prime archipelagos.
+    </p>
+
+    <!-- Screenshot Gallery -->
+    <div class="screenshot-grid">
+      <img src="../images/DinoIsles/Screenshot_20260903_224640.png" alt="Dino Isles Gameplay 1" class="screenshot-img">
+      <img src="../images/DinoIsles/Screenshot_20260903_224932.png" alt="Dino Isles Gameplay 2" class="screenshot-img">
+      <img src="../images/DinoIsles/Screenshot_20260903_224953.png" alt="Dino Isles Gameplay 3" class="screenshot-img">
+      <img src="../images/DinoIsles/Screenshot_20260903_225028.png" alt="Dino Isles Sanctuary" class="screenshot-img">
+      <img src="../images/DinoIsles/Screenshot_20260903_225052.png" alt="Dino Isles Collections" class="screenshot-img">
+      <img src="../images/DinoIsles/Screenshot_20260903_225113.png" alt="Dino Isles Levels" class="screenshot-img">
+    </div>
+
+    <!-- How to Play (The Ancient Laws) -->
+    <div class="laws-box">
+      <h3 style="font-size: 1.4rem; margin-bottom: 1.25rem; color: #2ed573;">🏝️ How to Play (The Ancient Laws)</h3>
+      <div style="display: flex; flex-direction: column; gap: 1rem; color: var(--text-muted); font-size: 0.98rem; line-height: 1.6;">
+        <div><strong style="color: var(--text-main);">🖐️ Drag to Paint:</strong> Touch any dinosaur clue and drag across open water to carve its lush island habitat.</div>
+        <div><strong style="color: var(--text-main);">🔢 Match the Target Number:</strong> Every dinosaur has a number indicating the exact size of its island (e.g. a Triceratops labeled "4" needs exactly 4 connected tiles).</div>
+        <div><strong style="color: var(--text-main);">🚫 The No-Touch Rule:</strong> Two dinosaurs of the same size/color can NEVER touch orthogonally—keep them separated with other species!</div>
+        <div><strong style="color: var(--text-main);">🌊 Full Grid Coverage:</strong> Fill every open water tile on the grid while routing around volcanic obstacles.</div>
+        <div><strong style="color: var(--text-main);">↩️ Tap or Backtrack to Erase:</strong> Made a mistake? Simply click any colored tile or drag backwards to erase and re-carve your path.</div>
+      </div>
+    </div>
+
+    <!-- 14 Collectible Species -->
+    <div style="margin: 3rem 0;">
+      <h3 style="font-size: 1.5rem; text-align: center; margin-bottom: 0.5rem; color: var(--text-main);">🦕 14 Collectible Dinosaur Species</h3>
+      <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; max-width: 700px; margin: 0 auto 1.5rem;">
+        Hatch rare prehistoric eggs and bring each species home to your sanctuary:
+      </p>
+
+      <div class="dino-species-grid">
+        <div class="dino-tag">🥚 Eggy</div>
+        <div class="dino-tag">🦎 Compy (1)</div>
+        <div class="dino-tag">🦅 Pterodactyl (2)</div>
+        <div class="dino-tag">🛡️ Stegosaurus (3)</div>
+        <div class="dino-tag">🦏 Triceratops (4)</div>
+        <div class="dino-tag">👑 T-Rex (5)</div>
+        <div class="dino-tag">🌊 Spinosaurus (6)</div>
+        <div class="dino-tag">🔨 Ankylosaurus (7)</div>
+        <div class="dino-tag">🦕 Brachiosaurus (8)</div>
+        <div class="dino-tag">⚡ Raptor (9)</div>
+        <div class="dino-tag">🎺 Parasaur (10)</div>
+        <div class="dino-tag">🏊 Plesiosaur (11)</div>
+        <div class="dino-tag">🥊 Pachyceph (12)</div>
+        <div class="dino-tag" style="background: rgba(255, 165, 2, 0.15); border-color: rgba(255, 165, 2, 0.4); color: #ffa502;">✨ Golden Spino (13)</div>
+      </div>
+    </div>
+
+    <!-- Features List -->
+    <div class="features-list">
+      <div class="feature-item">
+        <h4>🏝️ 160 Handcrafted Levels</h4>
+        <p>10 distinct ancient archipelagos from gentle 4x4 Coral Shallows to master-level 10x10 Pangaea Prime maps.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>🏡 Living Sanctuary Sandbox</h4>
+        <p>Adopt hatched dinos, pet them to hear cute chirps, collect Amber gems, and place cozy prehistoric decorations and hot springs.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>💡 3-Tier Smart Hint Engine</h4>
+        <p>Never get stuck: <strong>Tier 1:</strong> Conflict Scanner &bull; <strong>Tier 2:</strong> Expansion Guidance &bull; <strong>Tier 3:</strong> Ancient Auto-Carve.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>📅 Daily Challenges & Infinite Zen</h4>
+        <p>Fresh daily expedition puzzles with streak counters plus an infinite procedural sandbox generator with customizable grid sizes (4x4 to 10x10).</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>🎶 ASMR Audio & Tactile Haptics</h4>
+        <p>Soothing ocean waves, gentle chime blooms, and tactile click vibrations make every tile carve deeply satisfying.</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>📴 100% Offline & Privacy-First</h4>
+        <p>No internet required, no forced account creation, zero tracking, and zero intrusive ads or microtransactions.</p>
+      </div>
+    </div>
+
+    <!-- Pre-launch Callout -->
+    <div style="text-align: center; margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-glass);">
+      <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Launching Soon on Google Play & App Store</h3>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem; font-size: 0.95rem;">
+        Package: <code>com.fuzzydinolabs.dinoisles</code> &bull; Rated Everyone &bull; Built with Flutter
+      </p>
+      <a href="../" class="btn btn-primary" style="background: linear-gradient(135deg, #2ed573 0%, #00f2fe 100%); box-shadow: 0 10px 25px -5px rgba(46, 213, 115, 0.4);">&larr; Back to Studio Portfolio</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="../" class="brand-logo">
+          <img src="../images/FDL_logo_512_transparent.png" alt="Fuzzy Dino Labs Logo" style="width: 36px; height: 36px; object-fit: contain;">
+          <span>Fuzzy Dino <span class="gradient-text">Labs</span></span>
+        </a>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Crafting vibrant mobile puzzle and strategy games.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4 class="footer-title">Portfolio Games</h4>
+          <a href="../ciphersage" class="footer-link">CipherSage</a>
+          <a href="../sumplete" class="footer-link">Sumplete: Sum Delete</a>
+          <a href="../filler" class="footer-link">Filler: Flood It</a>
+          <a href="../starlight" class="footer-link">Starlight: Star Logic Puzzle</a>
+          <a href="../nonogram" class="footer-link">Nonogram</a>
+          <a href="../spinlogic" class="footer-link" style="color: #ff6b81;">SpinLogic (In Dev)</a>
+          <a href="../dinoisles" class="footer-link" style="color: #2ed573;">Dino Isles (In Dev)</a>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Connect & Social</h4>
+          <a href="https://x.com/fuzzydinolabs" class="footer-link" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+          <a href="https://www.youtube.com/@FuzzyDinoLabs" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
+          <a href="https://www.facebook.com/profile.php?id=61550564728273" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook Page</a>
+          <a href="https://play.google.com/store/apps/dev?id=4883328535939433573" class="footer-link" target="_blank" rel="noopener noreferrer">Google Play</a>
+          <a href="https://apps.apple.com/us/developer/daniel-kovac/id1678032511" class="footer-link" target="_blank" rel="noopener noreferrer">App Store</a>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Legal & Verification</h4>
+          <a href="../privacy-policy" class="footer-link">Privacy Policy</a>
+          <a href="../kids-privacy" class="footer-link">Children's Privacy Policy</a>
+          <a href="../terms-of-service" class="footer-link">Terms of Service</a>
+          <a href="../app-ads.txt" class="footer-link" target="_blank">app-ads.txt</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Fuzzy Dino Labs. All rights reserved.</p>
+      <p>Domain: <a href="https://www.fuzzydinolabs.com/" class="footer-link" style="color: var(--primary-glow);">www.fuzzydinolabs.com</a></p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
