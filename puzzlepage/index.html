@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phonics Magic: Learn to Read — Early Reading & Phonics App — Fuzzy Dino Labs</title>
-  <meta name="description" content="Phonics Magic: Learn to Read is an interactive children's educational app featuring real-time speech recognition, leveled sight words, interactive decodable storybooks, and Story Lab AI.">
-  <meta property="og:title" content="Phonics Magic: Learn to Read — Early Reading & Phonics App">
-  <meta property="og:description" content="Help children build confidence and fluency with real-time voice feedback, Dolch/Fry sight words, interactive stories, and speed challenges.">
-  <meta property="og:image" content="../images/PhonicsMagic/icon.png">
+  <title>The Puzzle Page — Daily Logic Puzzles on the Web — Fuzzy Dino Labs</title>
+  <meta name="description" content="Fresh logic puzzles every morning: Slitherlink, Cryptogram, Sumplete, Filler, Futoshiki, and Binairo. Free, calm, solo, and zero account needed. Play online at ThePuzzlePage.com.">
+  <meta property="og:title" content="The Puzzle Page — Daily Logic Puzzles">
+  <meta property="og:description" content="Fresh logic puzzles every morning: Slitherlink, Cryptogram, Sumplete, Filler, Futoshiki, and Binairo. 100% free, calm, solo, and no account needed.">
+  <meta property="og:image" content="../images/PuzzlePage/puzzle-page-share-image.png">
   
   <link rel="icon" href="../images/FDL_logo_512_transparent.png" type="image/png">
 
@@ -32,7 +32,7 @@
       width: 110px;
       height: 110px;
       border-radius: 24px;
-      box-shadow: 0 0 35px rgba(168, 85, 247, 0.45);
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.45);
       object-fit: cover;
     }
     .feature-banner-box {
@@ -41,7 +41,7 @@
       border-radius: var(--radius-lg);
       overflow: hidden;
       border: 1px solid var(--border-glass);
-      box-shadow: var(--shadow-card), 0 0 40px rgba(168, 85, 247, 0.2);
+      box-shadow: var(--shadow-card), 0 0 40px rgba(56, 189, 248, 0.2);
     }
     .feature-banner-img {
       width: 100%;
@@ -60,7 +60,7 @@
     }
     .screenshot-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
       margin: 2.5rem 0;
     }
@@ -72,8 +72,8 @@
       transition: transform 0.3s ease, border-color 0.3s ease;
     }
     .screenshot-img:hover {
-      transform: scale(1.03);
-      border-color: #c084fc;
+      transform: scale(1.02);
+      border-color: #38bdf8;
     }
     .features-list {
       display: grid;
@@ -90,7 +90,7 @@
       transition: transform 0.25s ease, border-color 0.25s ease;
     }
     .feature-item:hover {
-      border-color: #c084fc;
+      border-color: #38bdf8;
       transform: translateY(-2px);
     }
     .feature-item h4 {
@@ -107,34 +107,26 @@
       font-size: 0.95rem;
       line-height: 1.5;
     }
-    .mechanics-showcase {
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: var(--radius-md);
-      padding: 2rem;
-      border: 1px solid rgba(168, 85, 247, 0.25);
-      margin: 2.5rem 0;
-      text-align: left;
-    }
-    .modules-grid {
+    .puzzles-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
       margin-top: 1.5rem;
       text-align: left;
     }
-    .module-card {
+    .puzzle-card {
       background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(168, 85, 247, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.2);
       border-radius: var(--radius-md);
       padding: 1.25rem;
     }
-    .module-card h5 {
-      font-size: 1rem;
-      color: #c084fc;
+    .puzzle-card h5 {
+      font-size: 1.05rem;
+      color: #38bdf8;
       margin-bottom: 0.35rem;
     }
-    .module-card p {
-      font-size: 0.85rem;
+    .puzzle-card p {
+      font-size: 0.88rem;
       color: var(--text-muted);
       line-height: 1.45;
     }
@@ -151,9 +143,10 @@
       </a>
       <ul class="nav-links">
         <li><a href="../#portfolio" class="nav-link">Our Games</a></li>
+        <li><a href="https://www.thepuzzlepage.com/" target="_blank" rel="noopener noreferrer" class="nav-link" style="color: #38bdf8; font-weight: 600;">Daily Puzzles ↗</a></li>
         <li><a href="../#upcoming" class="nav-link" style="color: #2ed573;">In Development</a></li>
         <li><a href="../#features" class="nav-link">Studio Features</a></li>
-        <li><a href="../kids-privacy" class="nav-link">Kids Privacy</a></li>
+        <li><a href="../privacy-policy" class="nav-link">Privacy Policy</a></li>
         <li><a href="../terms-of-service" class="nav-link">Terms of Service</a></li>
       </ul>
       <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">☰</button>
@@ -162,86 +155,81 @@
 
   <!-- Game Hero -->
   <header class="game-page-hero">
-    <img src="../images/PhonicsMagic/icon.png" alt="Phonics Magic: Learn to Read Icon" class="game-page-icon" onerror="this.src='../images/FDL_logo_512_transparent.png'">
+    <img src="../images/PuzzlePage/puzzle-page-icon-2.png" alt="The Puzzle Page Icon" class="game-page-icon" onerror="this.src='../images/FDL_logo_512_transparent.png'">
     
-    <span class="badge badge-kids">Now Available on Android</span>
+    <span class="badge badge-web">Newly Released Daily Web App</span>
 
-    <h1 style="font-size: 3rem;">Phonics Magic: <span class="gradient-text" style="background: linear-gradient(135deg, #c084fc 0%, #f472b6 50%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Learn to Read</span></h1>
+    <h1 style="font-size: 3rem;">The <span class="gradient-text" style="background: linear-gradient(135deg, #38bdf8 0%, #60a5fa 50%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Puzzle Page</span></h1>
     
     <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 760px;">
-      Empower young readers with real-time speech feedback, interactive decodable storybooks, Dolch & Fry sight words, and custom AI story creation.
+      Fresh logic puzzles every morning right in your web browser. Slitherlink, Cryptogram, Sumplete, Filler, Futoshiki, and Binairo. 100% free, calm, solo, and zero account needed.
     </p>
 
-    <!-- Store Buttons -->
+    <!-- Play Button -->
     <div class="store-badges" style="justify-content: center; margin-top: 1rem;">
-      <a href="https://play.google.com/store/apps/details?id=com.fuzzydinolabs.storymagic" target="_blank" class="store-btn">
-        <span>📱</span>
-        <div class="store-btn-text">
-          <span class="store-btn-sub">Download on</span>
-          <span class="store-btn-main">Google Play</span>
-        </div>
+      <a href="https://www.thepuzzlepage.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%); box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.4); padding: 0.85rem 2rem; font-size: 1.1rem;">
+        Play Today's Puzzles on ThePuzzlePage.com ↗
       </a>
     </div>
 
     <div style="margin-top: 1rem; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
-      <span class="badge badge-kids">Voice Recognition Speech AI</span>
-      <span class="badge badge-ai">Dolch & Fry Sight Words</span>
-      <span class="badge badge-cozy">Interactive Decodable Stories</span>
-      <span class="badge badge-logic">100% Kid-Safe & COPPA Compliant</span>
+      <span class="badge badge-web">6 Daily Logic Modes</span>
+      <span class="badge badge-ai">Instant Browser Play</span>
+      <span class="badge badge-cozy">Calm & Minimalist</span>
+      <span class="badge badge-logic">No Account Required</span>
     </div>
   </header>
 
   <!-- Feature Graphic Banner -->
   <div class="feature-banner-box">
-    <img src="../images/PhonicsMagic/feature_graphic_1024x500.png" alt="Phonics Magic Feature Graphic Banner" class="feature-banner-img">
+    <img src="../images/PuzzlePage/puzzle-page-share-image.png" alt="The Puzzle Page Banner Preview" class="feature-banner-img">
   </div>
 
   <!-- Detailed Game Section -->
   <main class="game-details-box">
-    <h2 style="font-size: 2rem; text-align: center; margin-bottom: 1rem;">About <span class="gradient-text" style="background: linear-gradient(135deg, #c084fc 0%, #f472b6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Phonics Magic: Learn to Read</span></h2>
+    <h2 style="font-size: 2rem; text-align: center; margin-bottom: 1rem;">About <span class="gradient-text" style="background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">The Puzzle Page</span></h2>
     
     <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; text-align: center; max-width: 840px; margin: 0 auto;">
-      <strong>Phonics Magic</strong> transforms learning to read into an enchanting, confidence-building journey. Using always-on voice recognition technology, the app listens as children read aloud, highlighting words in real-time, providing immediate positive reinforcement, and gently guiding them through tricky phonetic sounds.
+      <strong>The Puzzle Page</strong> is your dedicated daily logic ritual. Designed from the ground up for desktop, tablet, and mobile browsers, it delivers fresh handcrafted challenges every single day without intrusive popups, accounts, or friction.
     </p>
 
-    <!-- Screenshot Gallery -->
+    <!-- Visual Showcase Grid -->
     <div class="screenshot-grid">
-      <img src="../images/PhonicsMagic/slide_1_en-US.png" alt="Phonics Magic Gameplay 1" class="screenshot-img">
-      <img src="../images/PhonicsMagic/slide_2_en-US.png" alt="Phonics Magic Gameplay 2" class="screenshot-img">
-      <img src="../images/PhonicsMagic/slide_3_en-US.png" alt="Phonics Magic Gameplay 3" class="screenshot-img">
-      <img src="../images/PhonicsMagic/slide_4_en-US.png" alt="Phonics Magic Gameplay 4" class="screenshot-img">
+      <img src="../images/PuzzlePage/media-generation-tpp-ad-flatlay-puzzle-0-237b4648-1ea2-4227-9a11-72291bf9b956.png" alt="The Puzzle Page Flatlay Showcase" class="screenshot-img">
+      <img src="../images/PuzzlePage/media-generation-tpp-ad-lifestyle-morning-0-68df03c2-18a5-442b-87b7-b2d406ca0974.png" alt="The Puzzle Page Morning Routine" class="screenshot-img">
     </div>
 
-    <!-- Core Educational Pillars -->
-    <div class="mechanics-showcase">
-      <h3 style="font-size: 1.4rem; margin-bottom: 1.25rem; color: #c084fc;">🪄 How Phonics Magic Builds Fluent Readers</h3>
-      <div style="display: flex; flex-direction: column; gap: 1rem; color: var(--text-muted); font-size: 0.98rem; line-height: 1.6;">
-        <div><strong style="color: var(--text-main);">🎙️ Real-Time Voice Recognition:</strong> Children read aloud into their device, watching words sparkle as they correctly pronounce each syllable and sentence.</div>
-        <div><strong style="color: var(--text-main);">📚 Decodable Story Library:</strong> Rich, illustrated stories organized by phonetic progression (CVC words, blends, digraphs, long vowels).</div>
-        <div><strong style="color: var(--text-main);">⚡ Timed Speed Challenges:</strong> Fun "30-Second Rush" and "60-Second Marathon" modes build rapid word recognition and sight word automaticity.</div>
-        <div><strong style="color: var(--text-main);">🤖 Story Lab AI:</strong> Parents and teachers can generate custom decodable stories tailored to a child's favorite themes, names, and current phonetic focus.</div>
-      </div>
-    </div>
-
-    <!-- 3 Learning Modules -->
+    <!-- 6 Daily Puzzle Types -->
     <div style="margin: 3rem 0;">
-      <h3 style="font-size: 1.5rem; text-align: center; margin-bottom: 0.5rem; color: var(--text-main);">Comprehensive Early Literacy Modules</h3>
+      <h3 style="font-size: 1.5rem; text-align: center; margin-bottom: 0.5rem; color: var(--text-main);">6 Handcrafted Daily Puzzle Types</h3>
       <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; max-width: 700px; margin: 0 auto 1.5rem;">
-        Everything young learners need from preschool through 2nd grade reading mastery:
+        Every morning brings a new slate of clean, deterministic logic challenges:
       </p>
 
-      <div class="modules-grid">
-        <div class="module-card">
-          <h5>1. Sight Word Academy</h5>
-          <p>Over 300+ Dolch and Fry high-frequency sight words with multi-sensory audio, phoneme breakdown, and flashcard modes.</p>
+      <div class="puzzles-grid">
+        <div class="puzzle-card">
+          <h5>1. Slitherlink</h5>
+          <p>Connect adjacent dots to form a single continuous loop matching numerical border counts.</p>
         </div>
-        <div class="module-card">
-          <h5>2. Interactive Decodables</h5>
-          <p>Charming illustrated storybooks with tap-to-listen word pronunciation and karaoke-style real-time voice tracking.</p>
+        <div class="puzzle-card">
+          <h5>2. Cryptogram</h5>
+          <p>Decode historical quotes and wise proverbs using cipher letter substitutions.</p>
         </div>
-        <div class="module-card">
-          <h5>3. Parent & Teacher Dashboard</h5>
-          <p>Full Word Manager to tag tricky vocabulary, track accuracy statistics, and manage custom reading assignments.</p>
+        <div class="puzzle-card">
+          <h5>3. Sumplete</h5>
+          <p>Delete numbers in a grid so that the remaining rows and columns match their target sums.</p>
+        </div>
+        <div class="puzzle-card">
+          <h5>4. Filler (Flood It)</h5>
+          <p>Flood-fill colorful puzzle boards in the minimum number of strategic moves.</p>
+        </div>
+        <div class="puzzle-card">
+          <h5>5. Futoshiki</h5>
+          <p>Latin square deduction with inequality symbols &lt; and &gt; constraining adjacent digits.</p>
+        </div>
+        <div class="puzzle-card">
+          <h5>6. Binairo (Takuzu)</h5>
+          <p>Fill the grid with 0s and 1s satisfying binary balance without three consecutive duplicates.</p>
         </div>
       </div>
     </div>
@@ -249,42 +237,39 @@
     <!-- Features List -->
     <div class="features-list">
       <div class="feature-item">
-        <h4>🔒 100% Child-Safe & Private</h4>
-        <p>Built strictly in compliance with COPPA, GDPR-K, and Google Play Families guidelines with zero third-party ads or data tracking.</p>
+        <h4>🌅 Fresh Every Morning</h4>
+        <p>A new daily rotation of puzzles goes live at midnight so your morning coffee is always accompanied by fresh brain teasers.</p>
       </div>
 
       <div class="feature-item">
-        <h4>🏆 Star Rewards & Avatars</h4>
-        <p>Motivating reward systems with collectible dinosaur avatars, celebration confetti, and personalized achievement certificates.</p>
+        <h4>⚡ Zero Friction & Instant</h4>
+        <p>No downloads, no installations, no sign-ups, and no passwords. Just open the page and begin solving immediately.</p>
       </div>
 
       <div class="feature-item">
-        <h4>🔊 Crystal Clear Phonics Audio</h4>
-        <p>Authentic studio-quality human voice pronunciations for every individual letter phoneme, blend, and decodable word.</p>
+        <h4>☕ Calm & Focused Design</h4>
+        <p>A serene, minimalist interface with dark and light themes, smooth tactile animations, and no jarring banner spam.</p>
       </div>
 
       <div class="feature-item">
-        <h4>📴 Offline Learning Mode</h4>
-        <p>Practice reading anywhere — in the car, on planes, or in waiting rooms without requiring a Wi-Fi connection.</p>
+        <h4>📱 Mobile & Desktop Optimized</h4>
+        <p>Engineered for responsive touchscreens, mouse clicks, and keyboard navigation across all screen sizes.</p>
       </div>
     </div>
 
-    <!-- Download Callout -->
+    <!-- CTA Box -->
     <div style="text-align: center; margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-glass);">
-      <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Download Phonics Magic: Learn to Read Today</h3>
+      <h3 style="font-size: 1.6rem; margin-bottom: 0.75rem;">Ready to Play Today's Logic Puzzles?</h3>
       <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem; font-size: 0.95rem;">
-        Package: <code>com.fuzzydinolabs.storymagic</code> &bull; Rated Everyone &bull; Built with Flutter
+        Visit <strong>ThePuzzlePage.com</strong> now in your browser. Free forever, no account required.
       </p>
-      <div class="store-badges" style="justify-content: center; margin-bottom: 2rem;">
-        <a href="https://play.google.com/store/apps/details?id=com.fuzzydinolabs.storymagic" target="_blank" class="store-btn">
-          <span>📱</span>
-          <div class="store-btn-text">
-            <span class="store-btn-sub">Download on</span>
-            <span class="store-btn-main">Google Play</span>
-          </div>
-        </a>
-      </div>
-      <a href="../" class="btn btn-glass">&larr; Back to Studio Portfolio</a>
+      <a href="https://www.thepuzzlepage.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%); box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.4); padding: 0.85rem 2.25rem; font-size: 1.1rem;">
+        Launch ThePuzzlePage.com ↗
+      </a>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="../index.html#portfolio" class="btn btn-glass">&larr; Back to Portfolio</a>
     </div>
   </main>
 
@@ -292,11 +277,11 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-brand">
-        <a href="../" class="brand-logo">
+        <a href="../index.html" class="brand-logo">
           <img src="../images/FDL_logo_512_transparent.png" alt="Fuzzy Dino Labs Logo" style="width: 36px; height: 36px; object-fit: contain;">
           <span>Fuzzy Dino <span class="gradient-text">Labs</span></span>
         </a>
-        <p style="color: var(--text-muted); font-size: 0.95rem;">Crafting vibrant mobile puzzle and strategy games.</p>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Crafting vibrant puzzle and strategy games for mobile and web.</p>
       </div>
 
       <div class="footer-links">
