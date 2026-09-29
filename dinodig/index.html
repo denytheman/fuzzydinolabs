@@ -192,9 +192,7 @@
   <header class="game-page-hero">
     <img src="../images/DinoDig/icon.png" alt="DinoDig: Fossil Sweeper Icon" class="game-page-icon" onerror="this.src='../images/FDL_logo_512_transparent.png'">
     
-    <div class="status-ribbon-fossil">
-      <span class="pulse-dot" style="background-color: #f39c12; box-shadow: 0 0 10px #f39c12;"></span> In Active Development — Coming Soon
-    </div>
+    <span class="badge badge-fossil">Now Available Worldwide</span>
 
     <h1 style="font-size: 3rem;">DinoDig: <span class="gradient-text" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 50%, #e74c3c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Fossil Sweeper</span></h1>
     
@@ -202,7 +200,25 @@
       Pure deductive paleontology logic puzzle. Combine Nonogram perimeter line clues with Minesweeper acoustic depth sensors to excavate 16 prehistoric dinosaur skeletons. Zero guessing required.
     </p>
 
-    <div style="margin-top: 0.5rem; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+    <!-- Store Buttons -->
+    <div class="store-badges" style="justify-content: center; margin-top: 1rem;">
+      <a href="https://play.google.com/store/apps/details?id=com.fuzzydinolabs.dinodig" target="_blank" class="store-btn">
+        <span>📱</span>
+        <div class="store-btn-text">
+          <span class="store-btn-sub">Download on</span>
+          <span class="store-btn-main">Google Play</span>
+        </div>
+      </a>
+      <a href="https://apps.apple.com/us/app/dinodig-fossil-sweeper/id6810040333" target="_blank" class="store-btn">
+        <span>🍏</span>
+        <div class="store-btn-text">
+          <span class="store-btn-sub">Download on</span>
+          <span class="store-btn-main">App Store</span>
+        </div>
+      </a>
+    </div>
+
+    <div style="margin-top: 1rem; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
       <span class="badge badge-fossil">100% Deterministic Deduction</span>
       <span class="badge badge-ai">80 Handcrafted Quarries</span>
       <span class="badge badge-cozy">16 Museum Skeletons</span>
@@ -330,13 +346,29 @@
       </div>
     </div>
 
-    <!-- Pre-launch Callout -->
+    <!-- Download Callout -->
     <div style="text-align: center; margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-glass);">
-      <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Launching Soon on Google Play & App Store</h3>
+      <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Download DinoDig: Fossil Sweeper Today</h3>
       <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem; font-size: 0.95rem;">
         Package: <code>com.fuzzydinolabs.dinodig</code> &bull; Rated Everyone &bull; Built with Flutter
       </p>
-      <a href="../" class="btn btn-primary" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); box-shadow: 0 10px 25px -5px rgba(243, 156, 18, 0.4);">&larr; Back to Studio Portfolio</a>
+      <div class="store-badges" style="justify-content: center; margin-bottom: 2rem;">
+        <a href="https://play.google.com/store/apps/details?id=com.fuzzydinolabs.dinodig" target="_blank" class="store-btn">
+          <span>📱</span>
+          <div class="store-btn-text">
+            <span class="store-btn-sub">Download on</span>
+            <span class="store-btn-main">Google Play</span>
+          </div>
+        </a>
+        <a href="https://apps.apple.com/us/app/dinodig-fossil-sweeper/id6810040333" target="_blank" class="store-btn">
+          <span>🍏</span>
+          <div class="store-btn-text">
+            <span class="store-btn-sub">Download on</span>
+            <span class="store-btn-main">App Store</span>
+          </div>
+        </a>
+      </div>
+      <a href="../" class="btn btn-glass">&larr; Back to Studio Portfolio</a>
     </div>
   </main>
 
@@ -359,8 +391,10 @@
           <a href="../filler" class="footer-link">Filler: Flood It</a>
           <a href="../starlight" class="footer-link">Starlight: Star Logic Puzzle</a>
           <a href="../nonogram" class="footer-link">Nonogram</a>
-          <a href="../dinodig" class="footer-link" style="color: #f39c12;">DinoDig: Fossil Sweeper (In Dev)</a>
-          <a href="../spinlogic" class="footer-link" style="color: #ff6b81;">SpinLogic (In Dev)</a>
+          <a href="../dinodig" class="footer-link" style="color: #f39c12;">DinoDig: Fossil Sweeper</a>
+          <a href="../spinlogic" class="footer-link" style="color: #ff6b81;">SpinLogic: Marble Puzzle</a>
+          <a href="../lightgarden" class="footer-link" style="color: #eab308;">Light Garden: Shade Puzzle</a>
+          <a href="../storymagic" class="footer-link" style="color: #c084fc;">Phonics Magic: Learn to Read</a>
           <a href="../dinoisles" class="footer-link" style="color: #2ed573;">Dino Isles (In Dev)</a>
         </div>
 

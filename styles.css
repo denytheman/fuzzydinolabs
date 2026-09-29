@@ -307,6 +307,60 @@ h1, h2, h3, h4 {
 .badge-color { background: rgba(127, 0, 255, 0.15); color: var(--secondary-accent); border: 1px solid rgba(127, 0, 255, 0.3); }
 .badge-puzzle { background: rgba(255, 165, 2, 0.15); color: #ffa502; border: 1px solid rgba(255, 165, 2, 0.3); }
 .badge-logic { background: rgba(46, 213, 115, 0.15); color: #2ed573; border: 1px solid rgba(46, 213, 115, 0.3); }
+.badge-garden { background: rgba(234, 179, 8, 0.15); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.35); }
+.badge-kids { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.35); }
+
+/* Store Buttons */
+.store-badges {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  font-size: 0.85rem;
+}
+
+.store-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.2);
+}
+
+.store-btn span:first-child {
+  font-size: 1.25rem;
+}
+
+.store-btn-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.store-btn-sub {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.store-btn-main {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
 
 .portfolio-title {
   font-size: 1.65rem;

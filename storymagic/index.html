@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dino Isles: Cozy Logic Puzzle — In Development — Fuzzy Dino Labs</title>
-  <meta name="description" content="Terraforming meets cozy logic! Drag to paint island habitats, balance dino numbers, hatch 14 dinosaur species, and decorate your living sanctuary in Dino Isles: Cozy Logic Puzzle.">
-  <meta property="og:title" content="Dino Isles: Cozy Logic Puzzle — Cozy Spatial Logic Game">
-  <meta property="og:description" content="Carve islands & hatch prehistoric dinos across 160 handcrafted levels, daily challenges, and zen sandbox modes.">
-  <meta property="og:image" content="../images/DinoIsles/icon_512.png">
+  <title>Phonics Magic: Learn to Read — Early Reading & Phonics App — Fuzzy Dino Labs</title>
+  <meta name="description" content="Phonics Magic: Learn to Read is an interactive children's educational app featuring real-time speech recognition, leveled sight words, interactive decodable storybooks, and Story Lab AI.">
+  <meta property="og:title" content="Phonics Magic: Learn to Read — Early Reading & Phonics App">
+  <meta property="og:description" content="Help children build confidence and fluency with real-time voice feedback, Dolch/Fry sight words, interactive stories, and speed challenges.">
+  <meta property="og:image" content="../images/PhonicsMagic/icon.png">
   
   <link rel="icon" href="../images/FDL_logo_512_transparent.png" type="image/png">
 
@@ -32,7 +32,7 @@
       width: 110px;
       height: 110px;
       border-radius: 24px;
-      box-shadow: 0 0 35px rgba(46, 213, 115, 0.45);
+      box-shadow: 0 0 35px rgba(168, 85, 247, 0.45);
       object-fit: cover;
     }
     .feature-banner-box {
@@ -41,7 +41,7 @@
       border-radius: var(--radius-lg);
       overflow: hidden;
       border: 1px solid var(--border-glass);
-      box-shadow: var(--shadow-card), 0 0 40px rgba(46, 213, 115, 0.2);
+      box-shadow: var(--shadow-card), 0 0 40px rgba(168, 85, 247, 0.2);
     }
     .feature-banner-img {
       width: 100%;
@@ -73,7 +73,7 @@
     }
     .screenshot-img:hover {
       transform: scale(1.03);
-      border-color: #2ed573;
+      border-color: #c084fc;
     }
     .features-list {
       display: grid;
@@ -90,7 +90,7 @@
       transition: transform 0.25s ease, border-color 0.25s ease;
     }
     .feature-item:hover {
-      border-color: #2ed573;
+      border-color: #c084fc;
       transform: translateY(-2px);
     }
     .feature-item h4 {
@@ -107,41 +107,36 @@
       font-size: 0.95rem;
       line-height: 1.5;
     }
-    .laws-box {
+    .mechanics-showcase {
       background: rgba(0, 0, 0, 0.3);
       border-radius: var(--radius-md);
       padding: 2rem;
-      border: 1px solid rgba(46, 213, 115, 0.2);
+      border: 1px solid rgba(168, 85, 247, 0.25);
       margin: 2.5rem 0;
       text-align: left;
     }
-    .status-ribbon-cozy {
-      background: linear-gradient(90deg, rgba(46, 213, 115, 0.2), rgba(0, 242, 254, 0.2));
-      border: 1px solid rgba(46, 213, 115, 0.4);
-      padding: 0.75rem 1.5rem;
-      border-radius: var(--radius-pill);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: #2ed573;
-      font-weight: 700;
-      font-size: 0.95rem;
-      margin-top: 0.5rem;
-    }
-    .dino-species-grid {
+    .modules-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 10px;
-      margin-top: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+      text-align: left;
     }
-    .dino-tag {
-      background: rgba(46, 213, 115, 0.08);
-      border: 1px solid rgba(46, 213, 115, 0.2);
-      padding: 8px 12px;
-      border-radius: var(--radius-sm);
+    .module-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(168, 85, 247, 0.15);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+    .module-card h5 {
+      font-size: 1rem;
+      color: #c084fc;
+      margin-bottom: 0.35rem;
+    }
+    .module-card p {
       font-size: 0.85rem;
-      text-align: center;
-      color: var(--text-main);
+      color: var(--text-muted);
+      line-height: 1.45;
     }
   </style>
 </head>
@@ -158,7 +153,7 @@
         <li><a href="../#portfolio" class="nav-link">Our Games</a></li>
         <li><a href="../#upcoming" class="nav-link" style="color: #2ed573;">In Development</a></li>
         <li><a href="../#features" class="nav-link">Studio Features</a></li>
-        <li><a href="../privacy-policy" class="nav-link">Privacy Policy</a></li>
+        <li><a href="../kids-privacy" class="nav-link">Kids Privacy</a></li>
         <li><a href="../terms-of-service" class="nav-link">Terms of Service</a></li>
       </ul>
       <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">☰</button>
@@ -167,125 +162,129 @@
 
   <!-- Game Hero -->
   <header class="game-page-hero">
-    <img src="../images/DinoIsles/icon_512.png" alt="Dino Isles Icon" class="game-page-icon" onerror="this.src='../images/FDL_logo_512_transparent.png'">
+    <img src="../images/PhonicsMagic/icon.png" alt="Phonics Magic: Learn to Read Icon" class="game-page-icon" onerror="this.src='../images/FDL_logo_512_transparent.png'">
     
-    <div class="status-ribbon-cozy">
-      <span class="pulse-dot" style="background-color: #2ed573; box-shadow: 0 0 10px #2ed573;"></span> In Active Development — Coming Soon
-    </div>
+    <span class="badge badge-kids">Now Available on Android</span>
 
-    <h1 style="font-size: 3rem;">Dino Isles: <span class="gradient-text" style="background: linear-gradient(135deg, #2ed573 0%, #00f2fe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Cozy Logic Puzzle</span></h1>
+    <h1 style="font-size: 3rem;">Phonics Magic: <span class="gradient-text" style="background: linear-gradient(135deg, #c084fc 0%, #f472b6 50%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Learn to Read</span></h1>
     
     <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 760px;">
-      Terraforming meets cozy logic! Drag to paint island habitats, balance dino numbers, hatch 14 prehistoric eggs, and decorate your living sanctuary.
+      Empower young readers with real-time speech feedback, interactive decodable storybooks, Dolch & Fry sight words, and custom AI story creation.
     </p>
 
-    <div style="margin-top: 0.5rem; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
-      <span class="badge badge-cozy">Cozy Spatial Logic</span>
-      <span class="badge badge-ai">160 Handcrafted Levels</span>
-      <span class="badge badge-logic">100% Offline & No Ads</span>
+    <!-- Store Buttons -->
+    <div class="store-badges" style="justify-content: center; margin-top: 1rem;">
+      <a href="https://play.google.com/store/apps/details?id=com.fuzzydinolabs.storymagic" target="_blank" class="store-btn">
+        <span>📱</span>
+        <div class="store-btn-text">
+          <span class="store-btn-sub">Download on</span>
+          <span class="store-btn-main">Google Play</span>
+        </div>
+      </a>
+    </div>
+
+    <div style="margin-top: 1rem; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+      <span class="badge badge-kids">Voice Recognition Speech AI</span>
+      <span class="badge badge-ai">Dolch & Fry Sight Words</span>
+      <span class="badge badge-cozy">Interactive Decodable Stories</span>
+      <span class="badge badge-logic">100% Kid-Safe & COPPA Compliant</span>
     </div>
   </header>
 
   <!-- Feature Graphic Banner -->
   <div class="feature-banner-box">
-    <img src="../images/DinoIsles/feature_graphic.jpg" alt="Dino Isles Feature Graphic" class="feature-banner-img">
+    <img src="../images/PhonicsMagic/feature_graphic_1024x500.png" alt="Phonics Magic Feature Graphic Banner" class="feature-banner-img">
   </div>
 
   <!-- Detailed Game Section -->
   <main class="game-details-box">
-    <h2 style="font-size: 2rem; text-align: center; margin-bottom: 1rem;">About <span class="gradient-text" style="background: linear-gradient(135deg, #2ed573 0%, #00f2fe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Dino Isles</span></h2>
+    <h2 style="font-size: 2rem; text-align: center; margin-bottom: 1rem;">About <span class="gradient-text" style="background: linear-gradient(135deg, #c084fc 0%, #f472b6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Phonics Magic: Learn to Read</span></h2>
     
     <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; text-align: center; max-width: 840px; margin: 0 auto;">
-      Welcome to <strong>Dino Isles: Cozy Logic Puzzle</strong>, a soothing and tactile spatial logic puzzle game where you terraform ancient archipelagos for adorable prehistoric companions! Progress through 10 unique biomes from gentle 4x4 Coral Shallows to master 10x10 Pangaea Prime archipelagos.
+      <strong>Phonics Magic</strong> transforms learning to read into an enchanting, confidence-building journey. Using always-on voice recognition technology, the app listens as children read aloud, highlighting words in real-time, providing immediate positive reinforcement, and gently guiding them through tricky phonetic sounds.
     </p>
 
     <!-- Screenshot Gallery -->
     <div class="screenshot-grid">
-      <img src="../images/DinoIsles/Screenshot_20260903_224640.png" alt="Dino Isles Gameplay 1" class="screenshot-img">
-      <img src="../images/DinoIsles/Screenshot_20260903_224932.png" alt="Dino Isles Gameplay 2" class="screenshot-img">
-      <img src="../images/DinoIsles/Screenshot_20260903_224953.png" alt="Dino Isles Gameplay 3" class="screenshot-img">
-      <img src="../images/DinoIsles/Screenshot_20260903_225028.png" alt="Dino Isles Sanctuary" class="screenshot-img">
-      <img src="../images/DinoIsles/Screenshot_20260903_225052.png" alt="Dino Isles Collections" class="screenshot-img">
-      <img src="../images/DinoIsles/Screenshot_20260903_225113.png" alt="Dino Isles Levels" class="screenshot-img">
+      <img src="../images/PhonicsMagic/slide_1_en-US.png" alt="Phonics Magic Gameplay 1" class="screenshot-img">
+      <img src="../images/PhonicsMagic/slide_2_en-US.png" alt="Phonics Magic Gameplay 2" class="screenshot-img">
+      <img src="../images/PhonicsMagic/slide_3_en-US.png" alt="Phonics Magic Gameplay 3" class="screenshot-img">
+      <img src="../images/PhonicsMagic/slide_4_en-US.png" alt="Phonics Magic Gameplay 4" class="screenshot-img">
     </div>
 
-    <!-- How to Play (The Ancient Laws) -->
-    <div class="laws-box">
-      <h3 style="font-size: 1.4rem; margin-bottom: 1.25rem; color: #2ed573;">🏝️ How to Play (The Ancient Laws)</h3>
+    <!-- Core Educational Pillars -->
+    <div class="mechanics-showcase">
+      <h3 style="font-size: 1.4rem; margin-bottom: 1.25rem; color: #c084fc;">🪄 How Phonics Magic Builds Fluent Readers</h3>
       <div style="display: flex; flex-direction: column; gap: 1rem; color: var(--text-muted); font-size: 0.98rem; line-height: 1.6;">
-        <div><strong style="color: var(--text-main);">🖐️ Drag to Paint:</strong> Touch any dinosaur clue and drag across open water to carve its lush island habitat.</div>
-        <div><strong style="color: var(--text-main);">🔢 Match the Target Number:</strong> Every dinosaur has a number indicating the exact size of its island (e.g. a Triceratops labeled "4" needs exactly 4 connected tiles).</div>
-        <div><strong style="color: var(--text-main);">🚫 The No-Touch Rule:</strong> Two dinosaurs of the same size/color can NEVER touch orthogonally—keep them separated with other species!</div>
-        <div><strong style="color: var(--text-main);">🌊 Full Grid Coverage:</strong> Fill every open water tile on the grid while routing around volcanic obstacles.</div>
-        <div><strong style="color: var(--text-main);">↩️ Tap or Backtrack to Erase:</strong> Made a mistake? Simply click any colored tile or drag backwards to erase and re-carve your path.</div>
+        <div><strong style="color: var(--text-main);">🎙️ Real-Time Voice Recognition:</strong> Children read aloud into their device, watching words sparkle as they correctly pronounce each syllable and sentence.</div>
+        <div><strong style="color: var(--text-main);">📚 Decodable Story Library:</strong> Rich, illustrated stories organized by phonetic progression (CVC words, blends, digraphs, long vowels).</div>
+        <div><strong style="color: var(--text-main);">⚡ Timed Speed Challenges:</strong> Fun "30-Second Rush" and "60-Second Marathon" modes build rapid word recognition and sight word automaticity.</div>
+        <div><strong style="color: var(--text-main);">🤖 Story Lab AI:</strong> Parents and teachers can generate custom decodable stories tailored to a child's favorite themes, names, and current phonetic focus.</div>
       </div>
     </div>
 
-    <!-- 14 Collectible Species -->
+    <!-- 3 Learning Modules -->
     <div style="margin: 3rem 0;">
-      <h3 style="font-size: 1.5rem; text-align: center; margin-bottom: 0.5rem; color: var(--text-main);">🦕 14 Collectible Dinosaur Species</h3>
+      <h3 style="font-size: 1.5rem; text-align: center; margin-bottom: 0.5rem; color: var(--text-main);">Comprehensive Early Literacy Modules</h3>
       <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; max-width: 700px; margin: 0 auto 1.5rem;">
-        Hatch rare prehistoric eggs and bring each species home to your sanctuary:
+        Everything young learners need from preschool through 2nd grade reading mastery:
       </p>
 
-      <div class="dino-species-grid">
-        <div class="dino-tag">🥚 Eggy</div>
-        <div class="dino-tag">🦎 Compy (1)</div>
-        <div class="dino-tag">🦅 Pterodactyl (2)</div>
-        <div class="dino-tag">🛡️ Stegosaurus (3)</div>
-        <div class="dino-tag">🦏 Triceratops (4)</div>
-        <div class="dino-tag">👑 T-Rex (5)</div>
-        <div class="dino-tag">🌊 Spinosaurus (6)</div>
-        <div class="dino-tag">🔨 Ankylosaurus (7)</div>
-        <div class="dino-tag">🦕 Brachiosaurus (8)</div>
-        <div class="dino-tag">⚡ Raptor (9)</div>
-        <div class="dino-tag">🎺 Parasaur (10)</div>
-        <div class="dino-tag">🏊 Plesiosaur (11)</div>
-        <div class="dino-tag">🥊 Pachyceph (12)</div>
-        <div class="dino-tag" style="background: rgba(255, 165, 2, 0.15); border-color: rgba(255, 165, 2, 0.4); color: #ffa502;">✨ Golden Spino (13)</div>
+      <div class="modules-grid">
+        <div class="module-card">
+          <h5>1. Sight Word Academy</h5>
+          <p>Over 300+ Dolch and Fry high-frequency sight words with multi-sensory audio, phoneme breakdown, and flashcard modes.</p>
+        </div>
+        <div class="module-card">
+          <h5>2. Interactive Decodables</h5>
+          <p>Charming illustrated storybooks with tap-to-listen word pronunciation and karaoke-style real-time voice tracking.</p>
+        </div>
+        <div class="module-card">
+          <h5>3. Parent & Teacher Dashboard</h5>
+          <p>Full Word Manager to tag tricky vocabulary, track accuracy statistics, and manage custom reading assignments.</p>
+        </div>
       </div>
     </div>
 
     <!-- Features List -->
     <div class="features-list">
       <div class="feature-item">
-        <h4>🏝️ 160 Handcrafted Levels</h4>
-        <p>10 distinct ancient archipelagos from gentle 4x4 Coral Shallows to master-level 10x10 Pangaea Prime maps.</p>
+        <h4>🔒 100% Child-Safe & Private</h4>
+        <p>Built strictly in compliance with COPPA, GDPR-K, and Google Play Families guidelines with zero third-party ads or data tracking.</p>
       </div>
 
       <div class="feature-item">
-        <h4>🏡 Living Sanctuary Sandbox</h4>
-        <p>Adopt hatched dinos, pet them to hear cute chirps, collect Amber gems, and place cozy prehistoric decorations and hot springs.</p>
+        <h4>🏆 Star Rewards & Avatars</h4>
+        <p>Motivating reward systems with collectible dinosaur avatars, celebration confetti, and personalized achievement certificates.</p>
       </div>
 
       <div class="feature-item">
-        <h4>💡 3-Tier Smart Hint Engine</h4>
-        <p>Never get stuck: <strong>Tier 1:</strong> Conflict Scanner &bull; <strong>Tier 2:</strong> Expansion Guidance &bull; <strong>Tier 3:</strong> Ancient Auto-Carve.</p>
+        <h4>🔊 Crystal Clear Phonics Audio</h4>
+        <p>Authentic studio-quality human voice pronunciations for every individual letter phoneme, blend, and decodable word.</p>
       </div>
 
       <div class="feature-item">
-        <h4>📅 Daily Challenges & Infinite Zen</h4>
-        <p>Fresh daily expedition puzzles with streak counters plus an infinite procedural sandbox generator with customizable grid sizes (4x4 to 10x10).</p>
-      </div>
-
-      <div class="feature-item">
-        <h4>🎶 ASMR Audio & Tactile Haptics</h4>
-        <p>Soothing ocean waves, gentle chime blooms, and tactile click vibrations make every tile carve deeply satisfying.</p>
-      </div>
-
-      <div class="feature-item">
-        <h4>📴 100% Offline & Privacy-First</h4>
-        <p>No internet required, no forced account creation, zero tracking, and zero intrusive ads or microtransactions.</p>
+        <h4>📴 Offline Learning Mode</h4>
+        <p>Practice reading anywhere — in the car, on planes, or in waiting rooms without requiring a Wi-Fi connection.</p>
       </div>
     </div>
 
-    <!-- Pre-launch Callout -->
+    <!-- Download Callout -->
     <div style="text-align: center; margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-glass);">
-      <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Launching Soon on Google Play & App Store</h3>
+      <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Download Phonics Magic: Learn to Read Today</h3>
       <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem; font-size: 0.95rem;">
-        Package: <code>com.fuzzydinolabs.dinoisles</code> &bull; Rated Everyone &bull; Built with Flutter
+        Package: <code>com.fuzzydinolabs.storymagic</code> &bull; Rated Everyone &bull; Built with Flutter
       </p>
-      <a href="../" class="btn btn-primary" style="background: linear-gradient(135deg, #2ed573 0%, #00f2fe 100%); box-shadow: 0 10px 25px -5px rgba(46, 213, 115, 0.4);">&larr; Back to Studio Portfolio</a>
+      <div class="store-badges" style="justify-content: center; margin-bottom: 2rem;">
+        <a href="https://play.google.com/store/apps/details?id=com.fuzzydinolabs.storymagic" target="_blank" class="store-btn">
+          <span>📱</span>
+          <div class="store-btn-text">
+            <span class="store-btn-sub">Download on</span>
+            <span class="store-btn-main">Google Play</span>
+          </div>
+        </a>
+      </div>
+      <a href="../" class="btn btn-glass">&larr; Back to Studio Portfolio</a>
     </div>
   </main>
 
